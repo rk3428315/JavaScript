@@ -3,11 +3,11 @@
 //1
  let arr = [76, 57,497,456];
 
-let a = arr.map((value,index)=>{
+let a4 = arr.map((value,index)=>{
     //console.log(value,index);
     return value + 1;
  })
- console.log(a);
+ console.log(a4);
 
 
  //Array filter method      --return array
