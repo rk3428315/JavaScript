@@ -27,6 +27,6 @@ let hello =() =>{
     console.log("Hi Anand where u in the javascript");
     return "hi";
 }
-hello();
+hello();    // To call the hello() function
 
 

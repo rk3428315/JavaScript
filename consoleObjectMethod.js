@@ -15,7 +15,7 @@ console.table(obje);
 
 console.warn("Hey this is warning.")    //warn()      - To show the warning in console
 
-//console.log(alert("please conform"))  //alert()   - To show the alert on the dom
+//console.log(alert("please conform"))  //alert()     - To show the alert on the dom
 
 console.info("Hi this is info");        //info()      - To show the important things
 
