@@ -1,20 +1,20 @@
 //Q 1
 
 let arrrr = [1,4,6,8,54];
-// let a1 = prompt("Enter a number ");
-// a1= Number.parseInt(a1);
-// arrrr.push(a1);
-// console.log(arrrr);
+let a1 = prompt("Enter a number ");
+a1= Number.parseInt(a1);
+arrrr.push(a1);
+console.log(arrrr);
 
 //Q 2
 
-// do{
-//     a1 = prompt("Enter a number ");
-//     a1= Number.parseInt(a1);
-//     arrrr.push(a1);
+do{
+    a1 = prompt("Enter a number ");
+    a1= Number.parseInt(a1);
+    arrrr.push(a1);
 
-// }while(a1 != 0);
-// console.log(arrrr);
+}while(a1 != 0);
+console.log(arrrr);
 
 //Q 3
 
