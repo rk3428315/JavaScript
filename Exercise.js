@@ -6,7 +6,7 @@ let score = 100;                      // Count variable to use guesses times
 
 while(input != gen){
     score -= 1;
-    input = prompt("Enter a number");
+    input = prompt("Enter a number!");
 
     // If guess number is right then print this condition
     if(input == gen){

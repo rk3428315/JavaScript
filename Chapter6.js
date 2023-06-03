@@ -66,7 +66,7 @@ if(canDrive1(age)){                          //condition to check age is equal t
 
 //Q 4--------------------
 
-let number = prompt("Enter number");
+let number = prompt("Enter a number!");
 number =Number.parseInt(number)
 if(number > 4){                                        //Condition to redirecte on google website
     location.href = "https://google.com"
