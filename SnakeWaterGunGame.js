@@ -7,39 +7,39 @@ let changes = 0;                                                    // variable 
 
 for (let i = 1; i < 11; i++) {                                      // Loop for 10 times repeate
 
-    let random = word[Math.floor(Math.random() * word.length)];         // To choose randamilly value from existing array
-    let input = prompt("Please enter anyone (snake, water, gun)");      // Enter value form the user
+    let player1 = word[Math.floor(Math.random() * word.length)];         // To choose randamilly value from existing array
+    let player2 = word[Math.floor(Math.random() * word.length)];      // Enter value form the user
 
-    if (input == random) {                                              // To check value input and random is same or not
+    if (player1 == player2) {                                              // To check value input and random is same or not
         console.log("Match draw");
         changes++;
     }
-    else if (input == "snake" && random == "water") {                   // To check condition if snake is greater than water then user win             
+    else if (player1 == "snake" && player2 == "water") {                   // To check condition if snake is greater than water then user win             
         console.log("You win");
         changes++;
         user++;
     }
-    else if (input == "water" && random == "snake") {                   // To check condition if water is greater than snake then computer win   
+    else if (player1 == "water" && player2 == "snake") {                   // To check condition if water is greater than snake then computer win   
         console.log("computer win");
         changes++;
         computer_user++;
     }
-    else if (input == "gun" && random == "snake") {                   // To check condition if gun is greater than snake then user win 
+    else if (player1 == "gun" && player2 == "snake") {                   // To check condition if gun is greater than snake then user win 
         console.log("You win");
         changes++;
         user++;
     }
-    else if (input == "snake" && random == "gun") {                   // To check condition if gun is greater than snake then computer win 
+    else if (player1 == "snake" && player2 == "gun") {                   // To check condition if gun is greater than snake then computer win 
         console.log("computer win");
         changes++;
         computer_user++;
     }
-    else if (input == "water" && random == "gun") {                   // To check condition if water is greater than gun then user win 
+    else if (player1 == "water" && player2 == "gun") {                   // To check condition if water is greater than gun then user win 
         console.log("You win");
         changes++;
         user++
     }
-    else if (input == "gun" && random == "snake") {                   // To check condition if gun is greater than snake then You win 
+    else if (player1 == "gun" && player2 == "snake") {                   // To check condition if gun is greater than snake then You win 
         console.log("You win");
         changes++;
         user++;
