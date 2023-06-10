@@ -12,6 +12,14 @@ for (let i = 1; i <= 10; i++) {         // Loop for print number 1 to 10
 
 }
 
+// Print even number between 1 to 10
+evenNumber =()=>{
+    for (let i = 0; i <= 10; i += 2){    // Loop for print even number 1 to 10 and it will add every time 2 value in i variable 
+        console.log(i)                  
+    }    
+}
+evenNumber();
+
 
 // Q 2
 
