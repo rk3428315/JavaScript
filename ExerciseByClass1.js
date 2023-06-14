@@ -1,6 +1,6 @@
 // Q 1
 
-// Calculate the first 100 prime number 
+// Calculate the first 100 prime number
 
 
 // Q 2
@@ -43,3 +43,6 @@ maxmiumNumberOfArray();
 // Q 4
 
 // Print the first 100 prime numbers
+
+
+    
