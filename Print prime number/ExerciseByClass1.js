@@ -2,38 +2,46 @@
 
 // Calculate the first 100 prime number
 
-let number = 1;
+let number = 2;
 
-let collectPrimeNumber = [];
+let collectPrimeNumber = [1];
 
 do {  
     function isPrime(num){
-        var sqrtnum = Math.floor(Math.sqrt(num));
-        var prime = num != 1;
-        for (var i = 2; i < sqrtnum + 1; i++){
-            if (num % i == 0) {
-                prime = false;
-                break;
+     // To get squarroot of num
+     var sqrtnum = Math.floor(Math.sqrt(num));
+     // If num is not qual to 1
+     var prime = num != 1;
+     // Loop to print if i value is less than squrtnum then add 1 in sqrtnum
+     for (var i = 2; i < sqrtnum + 1; i++){
+         // If remaind 0 after divide the num to i then prime will be false otherwise return true
+         if (num % i == 0) {
+             // return true 
+             prime = false;
+             break;
             }
         }
-        return prime;
+     return prime;
     }
-
+    // If isPrime
     if (isPrime(number)) {
         collectPrimeNumber.push(number);
     }
-    number++;
-    console.log(number);
+    number++;   
+    // console.log(number);
 
-} while (collectPrimeNumber.length < 100)
-    console.log(collectPrimeNumber);
+}     // To print collectPrimeNumber till 100 prime number
+while (collectPrimeNumber.length < 100){
 
     let sumPrimeNumber = 0;
+    // To print collectPrimeNumber till the collectPrimeNumber of length
     for (var x = 0; x < collectPrimeNumber.length; x++) {
-    sumPrimeNumber += collectPrimeNumber[x];
+    console.log(collectPrimeNumber[x]);    
+    }
+    
+    console.log('all sum of prime number is' + ' ' + sumPrimeNumber);
 }
 
-console.log('all sum of prime number is' + ' ' + sumPrimeNumber);
 
 
 // Q 2
@@ -67,7 +75,6 @@ maxmiumNumberOfArray = () => {
         }
     }
     console.log(max);
-
 }
 maxmiumNumberOfArray();
 
@@ -82,36 +89,59 @@ firstPrimNumber =()=>{
     do {  
     // To find isPrime number is true or false
         function isPrime(num){
-    // To get squarroot of num
+            // To get squarroot of num
             var sqrtnum = Math.floor(Math.sqrt(num));
-    // If num is not qual to 1
+            // If num is not qual to 1
             var prime = num != 1;
-    // Loop to print if i value is less than squrtnum then add 1 in sqrtnum
+            // Loop to print if i value is less than squrtnum then add 1 in sqrtnum
             for (var i = 2; i < sqrtnum + 1; i++){
-    // If remaind 0 after divide the num to i then prime will be false otherwise return true
+                // If remaind 0 after divide the num to i then prime will be false otherwise return true
                 if (num % i == 0) {
                     // return true 
                     prime = false;
+                    
                     break;
                 }
             }
             return prime;
         }
-    
+        // To check if number is prime then push in collectPrimeNumber 
         if (isPrime(number)) {
             collectPrimeNumber.push(number);
         }
-        number++;
-        console.log(number);
-    
+        number++
+
+    // To print collectPrimeNumber till 100 prime number
     } while (collectPrimeNumber.length < 100)
-        console.log(collectPrimeNumber);
     
         let sumPrimeNumber = 0;
+        // To print collectPrimeNumber till the collectPrimeNumber of length
         for (var x = 0; x < collectPrimeNumber.length; x++) {
-        sumPrimeNumber += collectPrimeNumber[x];
+        console.log(collectPrimeNumber[x],"First prime number.");
     }
 }
 firstPrimNumber();
 
-  
+
+
+
+
+
+// {
+//     let number = 1
+    
+//     do{
+//         if (isPrime(number)) {
+//             collectPrimeNumber.push(number);
+//         }
+    
+//     }while (collectPrimeNumber.length < 100)
+    
+//     let sumPrimeNumber = 0;
+//     for (var x = 0; x < collectPrimeNumber.length; x++) {
+//        sumPrimeNumber += collectPrimeNumber[x];
+//     }
+//     console.log(sumPrimeNumber);
+
+
+// }
