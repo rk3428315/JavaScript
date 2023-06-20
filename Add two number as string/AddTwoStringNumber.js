@@ -1,7 +1,4 @@
-addTwoStringNumber =() =>{
-    // Declared two string variable
-    let firstString = "-10";
-    let secondString = "40";
+addTwoStringNumber =(firstString,secondString) =>{
 
     // Convert string to number
     let firstNumber =parseInt(firstString);
@@ -23,4 +20,4 @@ addTwoStringNumber =() =>{
     
 }
 // Call function of Add two string 
-addTwoStringNumber();
+addTwoStringNumber("7987","4863");
