@@ -13,9 +13,10 @@ function sumJaggedArray(ar)
     // Loop to store vlaue of ar array one by one in el variable
     for(let el of ar)
     {
+        console.log(el)
         // if el is array then iterate the value of el element by using recursivie function (sumJaggeArray(el)) and store in el 
-        if (Array.isArray(el))
-        {
+        if (Array.isArray(el)){
+            
             el =sumJaggedArray(el)
             //console.log(el);
 
@@ -23,7 +24,7 @@ function sumJaggedArray(ar)
         // sum one by one el elment  value in sum variable    
         sum += el;
     }
-    console.log(sum);
+    // console.log(sum);
     
     return sum;
 }
