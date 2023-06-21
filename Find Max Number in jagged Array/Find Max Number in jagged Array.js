@@ -1,3 +1,7 @@
+// Find the max value in Jagged Array
+
+// Find with first method
+
 // Variable to store jagged array value
 let ar = [34,5,[39, 387,[384,948],29,34],6788];
 // To store max value
@@ -21,7 +25,7 @@ function maxNumberInJaggedArray(ar){
 maxNumberInJaggedArray(ar);
 
 
-
+// Find with second method
 {
     // Variable to store jagged array value
     let ar1 = [34,5,[39,387[384,948],29,34],6788];
