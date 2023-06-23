@@ -9,9 +9,9 @@ let store = [];
 
 // Function to check input value in string or not
 function checkStringOrNot(char){
-
-    // To return only a to z character string
+        // To return only a to z character string
     return /[a-z A-Z 0-9]/.test(char);
+   
 }
 
 // Function to find only string value

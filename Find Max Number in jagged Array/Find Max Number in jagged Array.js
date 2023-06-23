@@ -3,62 +3,70 @@
 // Find with first method
 
 // Variable to store jagged array value
-let ar = [34,5,[39, 387,[384,948],29,34],6788];
+let ar = [34,5,[39,9387,[384,9948],29,34],6788];
 // To store max value
-let max = 0;
+let max = maxNumberInJaggedArray(ar);
+console.log("max = ",max)
+
 // Function to find max value from array
 function maxNumberInJaggedArray(ar){
+    let max = -Infinity;
     // Loop to print till the end of array length
     for(i = 0; i < ar.length; i++){
         let el = ar[i];
+        console.log('el  ------- ', el, i)
         // To check if el is array or not
         if(Array.isArray(el)){
-            el = maxNumberInJaggedArray(el);            
+            //console.log("----is Array --------", el )
+            el = maxNumberInJaggedArray(el);
+            console.log(el);
+                     
         }
         // To check if el is greater than max value or not
         if(el > max){
             max = el;
+            //console.log(max)
         }
     }
-    console.log("Max Number in jagged Array = ",max)
+    return max;
+
+    console.log("Max Number in jagged Array = ",max);
 }
 maxNumberInJaggedArray(ar);
 
 
-// Find with second method
+
 {
-    // Variable to store jagged array value
-    let ar1 = [34,5,[39,387[384,948],29,34],6788];
-    let store1 = [];
-    let max1 = 0;
+    let ar = [2, 4, 10, [12, 4, [100, 99], 4], [3, 2, 99], 0];
 
-    function maxNumberInJaggedArray1(ar1){
-        // Loop to store vlaue of ar array one by one in el variable
-        for(let el1 of ar1) {
-            // console.log(el);
-            // If el is array then iterate the value of el element by using recursivie function (sumJaggeArray(el)) and store in el 
-            if (Array.isArray(el1)){
-               
-                el1 = maxNumberInJaggedArray1(el1);
+    let max = findMax(ar);
+    console.log("Max  = ", max);
+
+    // Use recursion to find the maximum numeric value in an array of arrays
+    function findMax(ar)
+    {
+        let max = -Infinity;
+
+        // Cycle through all the elements of the array
+        for(let i = 0; i < ar.length; i++)
+        {
+            let el = ar[i];
+            //console.log(el)
+
+            // If an element is of type array then invoke the same function
+            // to find out the maximum element of that subarray
+            if ( Array.isArray(el))
+            {
+                el = findMax( el );
+                console.log(el)
             }
-            // push el1 element in store1
-            store1.push(el1)
-            console.log(store1);
 
-            for (var ind = 1; ind < store1.length; ind++) {                 // To print index value of array from 1 index  to length of array and increase one by one by indexing
-                for (var x = 0; x < ind; x++) {                             // To print x index value of array from 0 index to length of array and  check if x value is less than array index value
-        
-                    if (store1[x] > store1[ind]) {                           // if x index value is greater than array index value 
-                        var store2 = store1[ind];                            // store value of array index value in store variable
-                        store1[ind] = store1[x];                            // store x index value in array index value
-                        store1[x] = store2;                                  // store x index value in store variable
-                    }
-                    // To store last max value in max variable
-                    let max = store1.pop();
-                    console.log("Store Max value = ",max)
-                }
+            if ( el > max )
+            {
+                max = el;
             }
         }
-    }    
-    maxNumberInJaggedArray1(ar1);
+
+        return max;
+    }
 }
