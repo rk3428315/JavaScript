@@ -20,6 +20,7 @@ console.log(first.outerHTML="<div>This is a div </div>");
 console.log(document.body.textContent);
 
 //
+console.log(first.classList.add("ravi"))
 
 
 
