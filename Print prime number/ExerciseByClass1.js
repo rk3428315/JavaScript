@@ -64,7 +64,7 @@ maxmiumNumberOfArray = () => {
     // variable to store value of array
     let max = array[0];
 
-    // Loop to print array index that greater than i 
+    // Loop to print array index that greater than i
     for (let i = 1; i < array.length; i++) {
 
         // To check if array index value in greater than max value
@@ -98,8 +98,7 @@ firstPrimNumber =()=>{
                 // If remaind 0 after divide the num to i then prime will be false otherwise return true
                 if (num % i == 0) {
                     // return true 
-                    prime = false;
-                    
+                    prime = false;        
                     break;
                 }
             }
@@ -121,27 +120,3 @@ firstPrimNumber =()=>{
     }
 }
 firstPrimNumber();
-
-
-
-
-
-
-// {
-//     let number = 1
-    
-//     do{
-//         if (isPrime(number)) {
-//             collectPrimeNumber.push(number);
-//         }
-    
-//     }while (collectPrimeNumber.length < 100)
-    
-//     let sumPrimeNumber = 0;
-//     for (var x = 0; x < collectPrimeNumber.length; x++) {
-//        sumPrimeNumber += collectPrimeNumber[x];
-//     }
-//     console.log(sumPrimeNumber);
-
-
-// }

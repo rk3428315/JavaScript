@@ -1,28 +1,31 @@
-// Inislize a jagged array
+
+
+// Sum of Jagged array
+
+// Variable to store jagged array value
 let ar = [1, 2, [15, [23], [5, 12]], [100]];
 
+// Function to return sum Of given jagged array
+function sumJaggedArray(ar)
+{
+    // To store sum value element
+    let sum = 0;
+    // Loop to store vlaue of ar array one by one in el variable
+    for(let el of ar)
+    {
+        //console.log(el)
+        // if el is array then iterate the value of el element by using recursivie function (sumJaggeArray(el)) and store in el 
+        if (Array.isArray(el)){
+            
+            el =sumJaggedArray(el)
+            //console.log(el);
 
-// Add Jagged Array in SumOfJaggedArray variable
-// let sumOfJaggedArray = ar[0] + ar[1] + ar[2][0] + ar[2][1][0] + ar[2][2][0] + ar[2][2][1] + ar[3][0];
-
-// console.log (sumOfJaggedArray);
-let total =0;
-
-let max =[];
-
-for(i=0; i<ar.length; i++){
-    // console.log( [i]); 
-    for(j =0; j <ar[i].length; j++){ 
-         //console.log(ar[i][j]);
-
-        for(k =0; k<ar[i][j].length; k++){
-            // console.log(ar[i][j][k]);
-            total += ar[i][j][k];
-            console.log(total)
-        }
+        }    
+        // sum one by one el elment  value in sum variable    
+        sum += el;
     }
+     console.log(sum);
+    
+    return sum;
 }
-
-
-
-
+sumJaggedArray(ar);
