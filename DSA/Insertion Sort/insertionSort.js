@@ -6,6 +6,7 @@ minimunNumber = (arr) => {
     let n = arr.length;
     // loop to iterate the one by one 
     for(let i = 1; i < n; i++){
+        //console.log(arr[i])
         // loop to iterate the value if the i index one by one
         for(j = 0; j < i; j++){
             console.log(arr[j]);
@@ -18,11 +19,11 @@ minimunNumber = (arr) => {
             }
             // To check the if element i is greater than j then not swape the element 
             if(arr[i] > arr[j]){
-                console.log(arr[i]);
+                //console.log(arr[i]);
                 //return n[j];
             }
         }        
-        console.log(arr)  
+        console.log(arr);
     }  
     return arr
 }

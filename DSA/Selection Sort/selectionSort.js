@@ -11,10 +11,10 @@
 let arr = [184,587,978,63,377,21,45];
 // To iterate the first loop
 minimunNumber = () => {
-    let n = arr.length
+    let n = arr.length;
     for(let i = 0; i < n; i++){
         // Store i in min
-        let min = i;
+        let min = i; //184
         // To iterate the second loop for the find the smallest value from index 1 to array length and 
         for(j = i+1; j < n; j++){
             console.log(arr[j]);
