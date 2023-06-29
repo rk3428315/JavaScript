@@ -31,4 +31,4 @@ sumOddFabonicSeries =(n) =>{
     console.log("Sum of odd fabonacci series = ",sum)                    
     return sum;
 }
-sumOddFabonicSeries(10);
+sumOddFabonicSeries(20);
