@@ -1,9 +1,9 @@
 // To find the sum odd fabonacci series
 sumOddFabonicSeries =(n) =>{
     // Define the variable to campare value of n
-    value = 1;
+    value = 0;
     // Define to store the latest value of value
-    i =0;
+    i =1;
     // Define to store the sum of fabonacci series
     let sum = 0;
 
@@ -18,10 +18,10 @@ sumOddFabonicSeries =(n) =>{
         // To check odd fabonacci series
         if(value % 2 != 0){
             // To sum the value of odd fabonacci series   
-           sum +=value
-        }        
+            sum +=value
+        }     
     }
     console.log("Sum of odd fabonacci series = ",sum)                    
     return sum
 }
-sumOddFabonicSeries(20)
+sumOddFabonicSeries(1);
