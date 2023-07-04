@@ -7,7 +7,7 @@ truncateString = (stringValue, lengthValue) =>{
             console.log(stringValue[i]);
         }
         // To check the if lenght value is less than i and greater than 0 then print the ...
-        if(i > lengthValue && i < 0){
+        if(i > lengthValue && i > 0){
             console.log("...");
         }
         // To check the if 0 is greater than i then print nothing
@@ -16,4 +16,4 @@ truncateString = (stringValue, lengthValue) =>{
         }
     }
 }
-truncateString("Avinash Kumar", -2);
+truncateString("Avinash Kumar", 2);
