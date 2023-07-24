@@ -73,9 +73,9 @@ function convertToRoman(num) {
             }
 
         }
-        return convertedRoman;
+        return convertRoman;
     }
 }
-console.log(convertToRoman(1100));
+console.log(convertToRoman(""));
 
 
