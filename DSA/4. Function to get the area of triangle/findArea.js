@@ -1,7 +1,9 @@
 // To find the area
 function  area(h, b) {
-    let area = (h * b)/2;
-    console.log("Area : ",area)
     
+    h = document.getElementById('h').value ;
+    b = document.getElementById('b').value ;
+    let area = (h * b)/2;
+    document.getElementById('area').value = area;
+    console.log("Area : ",area);    
 }
-area(20,30);

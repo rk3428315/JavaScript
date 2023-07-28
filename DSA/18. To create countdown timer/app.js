@@ -70,41 +70,59 @@
 
 
 
-var mins=1;
-	var secs=mins*60;
-	function countdown() {
-		setTimeout('Decrement()',60);
-	}
+var mins=0.1;
+var secs=mins*60;
+function countdown() {
+	setTimeout('Decrement()',60);
+}
 
-	function Decrement() {
-		if(document.getElementById) {
-			minutes=document.getElementById("minutes");
-			seconds=document.getElementById("seconds");
-			if(seconds<59) {
-				seconds=secs;
-			}
-			else {
-				minutes.value=getminutes();
-				seconds.value=getseconds();
-			}
+function Decrement() {
+	if(document.getElementById) {
+		minutes=document.getElementById("minutes");
+		seconds=document.getElementById("seconds");
+		if(seconds<59) {
+			seconds=secs;
+		}
+		else {
+			minutes.value=getminutes();
+			seconds.value=getseconds();
+		}
+		
+		if(mins<0) {
 			
-			if(mins<0) {
-				alert('time up');
-				minutes.value=0;
-				seconds.value=0;
-			}
-			else {
-				secs--;
-				setTimeout('Decrement()',1000);
-			}
+				function sendEmail(to, subject, body){ 
+					Email.send(
+						
+						"ravikumar08979@gmail.com", //from
+						to, //to
+						subject, //subject
+						body,  //body
+						"smtp.gmail.com", //smtp host
+						"ravikumar08979@gmail.com", //username account
+						"hwlw iinw pfqg wtla",    //password account
+						message=>{
+							alert("sent");
+						}
+					);
+				}
+			
+			sendEmail("ravi3428315@gmail.com", "Hi", "timer stop");
+
+			minutes.value=0;
+			seconds.value=0;
+		}
+		else {
+			secs--;
+			setTimeout('Decrement()',1000);
 		}
 	}
+}
 
-	function getminutes() {
-		mins=Math.floor(secs/60);
-		return mins;
-	}
+function getminutes() {
+	mins=Math.floor(secs/60);
+	return mins;
+}
 
-	function getseconds() {
-		return secs-Math.round(mins*60);
-	}
+function getseconds() {
+	return secs-Math.round(mins*60);
+}

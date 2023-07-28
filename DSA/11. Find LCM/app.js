@@ -1,10 +1,9 @@
 function findLCM(number, number1){
 
+    number = document.getElementById('number').value;
+    number1 = document.getElementById('number1').value;
     let hcf = 0;
     let lcm = 0;
-    let firstNumber = 0;
-    let secomdNumberNumber = 0;
-    let thirdNumber = 0;
 
     for(let i =1; i <= number && i <= number1; i++){
 
@@ -14,6 +13,6 @@ function findLCM(number, number1){
         }
     }
     lcm = (number * number1) / hcf;
+    return document.getElementById('lcm').value = lcm;
     console.log(lcm);
 }
-findLCM(100,512);

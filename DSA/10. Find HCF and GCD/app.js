@@ -1,5 +1,8 @@
 // To find the HCF and GCD (HFC and GCD are the same thing)
 function  hcfandgcd(number, number1) {
+    number = document.getElementById('number').value;
+    number1 = document.getElementById('number1').value;
+
     let hcf = 0;
     // To iterate till the end of number and number1
     for (let i = 1; i <= number && i <= number1; i++){
@@ -9,6 +12,6 @@ function  hcfandgcd(number, number1) {
             //console.log("HCF : ",hcf);
        }
     }
-    return hcf;
+    return document.getElementById('hcf').value = hcf;
 }
-console.log("HCF : ",hcfandgcd(60,50));
+// console.log("HCF : ",hcfandgcd(60,50));

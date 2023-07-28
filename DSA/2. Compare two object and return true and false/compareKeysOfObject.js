@@ -1,5 +1,8 @@
 // create a object constructor
-function Students(first,last,age) {
+function Students(first,last,age){
+    // first = document.getElementById('first').value;
+    // last = document.getElementById('last').value;
+    // age = document.getElementById('age').value;
     // To add the key and value in object
     this.firstName = first;
     this.lastName = last;
@@ -7,7 +10,17 @@ function Students(first,last,age) {
 }
 
 const d = new Students("Ajeet","kumar","22");
+
+document.getElementById('d1').value = d.firstName;
+document.getElementById('d11').value = d.lastName;
+document.getElementById('d111').value = d.age;
+
 const d1 = new Students("Ravi","kumar","22");
+
+document.getElementById('d2').value = d1.firstName;
+document.getElementById('d22').value = d1.lastName;
+document.getElementById('d222').value = d1.age;
+
 console.log(d,d1);
 
 
@@ -22,16 +35,16 @@ function compareObject(student, student1) {
         for(let key of key1){
             // To check values of key is the same in student and student1
             if(d[key] === d1[key]){
-                return true;
+                document.write('<br>');
+                return document.write(true);
             }        
             else{
-        
-                return  false;
+                document.write('<br>');
+                return document.write(false);
             }
         }
         return true;
     }
-    return false;
-    
+    return false;        
 }
 console.log(compareObject(d, d1)); 
