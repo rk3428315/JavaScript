@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="formstyle">
+        <form name="form" >
+            <input type="button" name="store" id="calc">
+            <br>
+            <br>
+            
+            <input type="button" value="C" onclick="form.store.value = ' ' "id="clear">
+            <br>
+            <br>
+            <input type="button" value="1" onclick="form.store.value += '1' ">
+            <input type="button" value="2" onclick="form.store.value += '2' ">
+            <input type="button" value="3" onclick="form.store.value += '3' ">
+            <input type="button" value="+" onclick="form.store.value += '+' ">
+            <br>
+            <br>
+            <input type="button" value="4" onclick="form.store.value += '4' ">
+            <input type="button" value="5" onclick="form.store.value += '5' ">
+            <input type="button" value="6" onclick="form.store.value += '6' ">
+            <input type="button" value="-" onclick="form.store.value += '-' ">
+            <br>
+            <br>
+            <input type="button" value="7" onclick="form.store.value += '7' ">
+            <input type="button" value="8" onclick="form.store.value += '8' ">
+            <input type="button" value="9" onclick="form.store.value += '9' ">
+            <input type="button" value="*" onclick="form.store.value += '*' ">
+            <br>
+            <br>
+            <input type="button" value="0" onclick="form.store.value += '0' ">
+            <input type="button" value="." onclick="form.store.value += '.' ">
+            <input type="button" value="/" onclick="form.store.value += '/' ">
+            <input type="button" value="=" onclick="form.store.value = eval(form.store.value) "> 
+            
+        </form>
+    </div>
+
+</body>
+</html>
