@@ -1,0 +1,25 @@
+
+
+input{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 191px;
+}
+
+div{
+    font-weight:bold;
+}
+
+.address{
+    width: 382px !important;
+}
+
+input#submit {
+    width: auto;
+    margin-left: 145px;
+}
+
+input#reset {
+    width: auto;
+    margin-left: 100px;
+}

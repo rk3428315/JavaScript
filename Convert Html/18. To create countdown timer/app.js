@@ -25,8 +25,26 @@ function countdownvalue(){
 			}
 			
 			if(mins<0) {
+
 				minutes.value=0;
 				seconds.value=0;
+				function sendEmail(to, subject, body){ 
+					Email.send(
+					
+						"ravikumar08979@gmail.com", //from
+						to, //to
+						subject, //subject
+						body,  //body
+						"smtp.gmail.com", //smtp host
+						"ravikumar08979@gmail.com", //username account
+						"hwlw iinw pfqg wtla",    //password account
+						message=>{
+							alert("Time Left");
+						}
+					);
+				}
+				
+				sendEmail("ravi3428315@gmail.com", "Hi", "timer stop");
 			}
 			else {
 				secs--;
@@ -50,20 +68,3 @@ function countdownvalue(){
 
 
 
-// function sendEmail(to, subject, body){ 
-// 	Email.send(
-	
-// 		"ravikumar08979@gmail.com", //from
-// 		to, //to
-// 		subject, //subject
-// 		body,  //body
-// 		"smtp.gmail.com", //smtp host
-// 		"ravikumar08979@gmail.com", //username account
-// 		"hwlw iinw pfqg wtla",    //password account
-// 		message=>{
-// 			alert("Time Left");
-// 		}
-// 	);
-// }
-
-// sendEmail("ravi3428315@gmail.com", "Hi", "timer stop");
