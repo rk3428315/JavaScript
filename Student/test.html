@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <style>
+    #ball {
+      position: absolute;
+    }
+  </style>
+  <div id="ball">dd</div>
+  <script type="text/javascript">
+   var Ball = document.getElementById('ball');
+var ballPosition = 0;
+
+var pageWidth = document.body.offsetWidth;
+
+var Loop = setInterval(function () {
+    ballPosition = Ball.offsetLeft;
+
+    if (ballPosition < pageWidth) {
+        Ball.style.left = ballPosition + 10 + "px";
+    } else {
+        Ball.style.left = 0 + "px";
+    }
+}, 1000/20);
+  </script>
+</body>
+
+</html>

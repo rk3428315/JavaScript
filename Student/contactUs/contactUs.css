@@ -1,4 +1,12 @@
+@media screen and (min-width: 600px) {
+    .width {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 40px;
+    }
+}
 
+/* Menu */
 @media screen and (min-width: 600px) {
     #button {
         display: none;
@@ -10,13 +18,4 @@
     #myNavbar {
         display: none;
     }
-}
-
-
-#ball {
-    /* position: absolute; */
-  }
-
-  .bg-secondary {
-    background-color: #198754!important;
 }
