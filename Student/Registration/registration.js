@@ -1,8 +1,9 @@
-var div = document.getElementById('myNavbar');
-var display = 0;
 
 // To display the menu on mobile view
+var div = document.getElementById('myNavbar');
+var display = 0;
 function hideShow() {
+
     if (display == 0) {
         div.style.display = 'block';
         display = 1;
@@ -51,8 +52,15 @@ createRegData = () =>{
     newRegData = new regData(name, age, gender, email, address, city, zip);
 
     // To push object data again and again in storeRegData array
-    storeRegData.push(newRegData);
-    console.log(storeRegData, "Array Data")
+    storeRegData.push(newRegData)
+
+    // To set data in local Storage
+    localStorage.setItem("local Data",JSON.stringify(storeRegData));
+    console.log(storeRegData, "Array Data");
+
+    // To get local Storage Data
+    // const getLocalData = localStorage.getItem("local Data");
+    // console.log(getLocalData);
 
     idOfObj++ ;
     
