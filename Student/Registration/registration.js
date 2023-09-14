@@ -24,7 +24,7 @@ let idOfObj = 1;
 let storeRegData = [];
 
 // created a object for registration form data
-function regData (name, age, gender, email, address, city, zip){
+function regData (name, age, gender, email, password, address, city, zip){
     this.id = idOfObj,
     this.name = name,
     this.age = age,
@@ -32,6 +32,7 @@ function regData (name, age, gender, email, address, city, zip){
     this.email = email,
     this.address = address,
     this.city = city,
+    this.password = password,
     this.zip = zip
 
 }
@@ -44,15 +45,16 @@ createRegData = () =>{
     var age = document.getElementById('inputage').value;
     var gender = document.getElementById('inputgender').value;
     var email = document.getElementById('inputemail').value;
+    var password = document.getElementById('inputpassword').value;
     var address = document.getElementById('inputaddress').value;
     var city = document.getElementById('inputcity').value;
     var zip = document.getElementById('inputzip').value;
 
     // To create new object
-    newRegData = new regData(name, age, gender, email, address, city, zip);
+    newRegData = new regData(name, age, gender, email, password, address, city, zip);
 
     // To push object data again and again in storeRegData array
-    storeRegData.push(newRegData)
+    storeRegData.push(newRegData);
 
     // To set data in local Storage
     localStorage.setItem("local Data",JSON.stringify(storeRegData));
