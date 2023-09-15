@@ -1,22 +1,13 @@
-
-@media screen and (min-width: 600px) {
-    #button {
-        display: none;
-        background-color: (0, 0, 0, .25);
-    }
+#img {
+    border: 0px solid;
+    width: 100%;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 600px) {
-    #myNavbar {
-        display: none;
-    }
-}
-
-
-#ball {
-    /* position: absolute; */
-  }
-
-  .bg-secondary {
-    background-color: #198754!important;
+.para {
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+    clear: both;
+    float: left;
 }

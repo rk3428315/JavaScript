@@ -1,18 +1,4 @@
-// To display the menu on mobile view
-var div = document.getElementById('myNavbar');
-var display = 0;
-function hideShow() {
 
-    if (display == 0) {
-        div.style.display = 'block';
-        display = 1;
-    }
-    else {
-        div.style.display = 'none';
-        display = 0;
-    }
-}
-//  -------------End-------------------
 
 // To get json data for the Notice bar
 
@@ -42,29 +28,6 @@ setTimeout(function () {
 //  -------------End-------------------
 
 
-// To get json data for the Nav Bar
-
-let storeNavData = [];
-fetch('/JsonData/navBarData.json')
-    .then((res => res.json()))
-    .then((value => storeNavData = value))
-
-setTimeout(function () {
-    let div = document.getElementById('myNavbar');
-    var row = "";
-
-    // To iteral the allJSONData one by one and add in row
-    storeNavData.forEach(element => {
-        row += '<li><a class="nav-link" aria-current="page" href="' + element.link + '">' + element.name + '</a></li>';
-        //  console.log(element.name, "row");
-
-    });
-    div.innerHTML = row;
-    // console.log(row, "row");
-
-}, 500);
-
-//  ---------------End-------------------
 
 
 // To get json data for the four image
@@ -77,7 +40,7 @@ fetch('/JsonData/imgData.json')
 setTimeout(function () {
     let div = document.getElementById('img');
     var row = "";
-    // let id = 0;
+    let id = 0;
     // To iteral the allJSONData one by one and add in row
     storeImgData.forEach(element => {
         row += '<div class="col-sm-3 col-3 " id="img1"><img src="' + element.img + '" alt="error" class=" h-100 w-100 "></div>'
@@ -90,14 +53,51 @@ setTimeout(function () {
 
 }, 500);
 
+//  ---------------End-------------------
+
+
+
+// To get json data for the NavBar
+
+let storeNavBarData = "";
+fetch("/NavBar/navBar.html")
+        .then(res => res.text())
+        .then(value => storeNavBarData = value);
+
+setTimeout(function () {
+    
+    document.getElementById("navBar").innerHTML = storeNavBarData;
+    // console.log(row, "row");
+
+}, 1000);
+
+//  ---------------End-------------------
+
+
+// To get json data for the Footer
+
+let storeFooterData = "";
+fetch("/footer.html")
+        .then(res => res.text())
+        .then(value => storeFooterData = value);
+
+setTimeout(function () {
+    
+    document.getElementById("footer").innerHTML = storeFooterData;
+    // console.log(row, "row");
+
+}, 1000);
+
+//  ---------------End-------------------
+
 // setTimeout(function (){
-//     const para1 = document.getElementById("img1");   
+//     const para1 = document.getElementById("img");   
 //     animate(para1);
 //     // animate(para2);
     
 //     function animate(element) {
-//         let elementWidth = element.offsetWidth;
-//         let parentWidth = element.parentElement.offsetWidth;
+//         let elementWidth = element.offsetWidth; // width of element 
+//         let parentWidth = element.parentElement.offsetWidth; // width of parent
 //         let flag = 0;
     
 //         setInterval(() => {
