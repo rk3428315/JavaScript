@@ -137,6 +137,7 @@ setTimeout(function () {
 
 //  ---------------End-------------------
 
+// To marquee the four images
 // setTimeout(function (){
 //     const para1 = document.getElementById("img");   
 //     animate(para1);
@@ -153,7 +154,7 @@ setTimeout(function () {
 //             if (elementWidth == -flag) {
 //                 flag = parentWidth;
 //             }
-//         }, 10);
+//         }, 1);
 //     }
 
 // }, 1000)

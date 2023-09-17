@@ -34,6 +34,27 @@ setTimeout(function () {
 //  ---------------End-------------------
 
 
+// To data store in local storage
+
+let storeLoginData = [];
+function loginData(email, password){
+    this.email = email,
+    this.password = password
+}
+
+createLoginData =() =>{
+    var email = document.getElementById('inputemail').value;
+    var password = document.getElementById('inputpassword').value;
+
+    newLoginData = new loginData(email, password);
+    storeLoginData.push(newLoginData);    
+    console.log(storeLoginData);
+    localStorage.setItem("local Data",JSON.stringify(storeLoginData));
+}
+
+//-----------End------------------
+
+
 // To get json data for the Footer
 
 let storeFooterData = "";

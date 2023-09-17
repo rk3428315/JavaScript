@@ -7,7 +7,7 @@
 .para {
     color: black;
     font-weight: bold;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     clear: both;
     float: left;
 }
