@@ -48,7 +48,7 @@ createLoginData =() =>{
 
     newLoginData = new loginData(email, password);
     storeLoginData.push(newLoginData);    
-    console.log(storeLoginData);
+    console.log(storeLoginData,"jkhggfh");
     localStorage.setItem("local Data",JSON.stringify(storeLoginData));
 }
 

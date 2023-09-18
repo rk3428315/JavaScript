@@ -1,0 +1,8 @@
+body{
+    background-image: url('/Images/background.jpg');
+    width: 98%;
+}
+
+.linear-gradient{
+    background: linear-gradient(20deg, #d83b5d, #0ddb96);
+}
