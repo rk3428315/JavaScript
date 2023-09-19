@@ -21,11 +21,11 @@ function hideShow() {
 
 let storeFooterData = "";
 fetch("/footer.html")
-        .then(res => res.text())
-        .then(value => storeFooterData = value);
+    .then(res => res.text())
+    .then(value => storeFooterData = value);
 
 setTimeout(function () {
-    
+
     document.getElementById("footer").innerHTML = storeFooterData;
     // console.log(row, "row");
 
@@ -37,11 +37,11 @@ setTimeout(function () {
 
 let storeNavBarData = "";
 fetch("/NavBar/navBar.html")
-        .then(res => res.text())
-        .then(value => storeNavBarData = value);
+    .then(res => res.text())
+    .then(value => storeNavBarData = value);
 
 setTimeout(function () {
-    
+
     document.getElementById("navBar").innerHTML = storeNavBarData;
     // console.log(row, "row");
 
@@ -54,27 +54,26 @@ setTimeout(function () {
 
 // id for the object
 let idOfObj = 1;
-
 // Array to store the object data one by one 
 let storeRegData = [];
 
 // created a object for registration form data
-function regData (name, age, gender, email, password, address, city, zip){
+function regData(name, age, gender, email, password, address, city, zip) {
     this.id = idOfObj,
-    this.name = name,
-    this.age = age,
-    this.gender = gender,
-    this.email = email,
-    this.address = address,
-    this.city = city,
-    this.password = password,
-    this.zip = zip
+        this.name = name,
+        this.age = age,
+        this.gender = gender,
+        this.email = email,
+        this.address = address,
+        this.city = city,
+        this.password = password,
+        this.zip = zip
 
 }
 
 // to create the data as object form registration input field
-createRegData = () =>{
-    
+createRegData = () => {
+
     // For the access the field data of registration form
     var name = document.getElementById('inputname').value;
     var age = document.getElementById('inputage').value;
@@ -87,20 +86,20 @@ createRegData = () =>{
 
     // To create new object
     newRegData = new regData(name, age, gender, email, password, address, city, zip);
-
-    // To push object data again and again in storeRegData array
     storeRegData.push(newRegData);
 
+    // To push object data again and again in storeRegData array
+    localStorage.setItem("name", JSON.stringify(newRegData));
+
     // To set data in local Storage
-    localStorage.setItem("local Data",JSON.stringify(storeRegData));
     console.log(storeRegData, "Array Data");
 
     // To get local Storage Data
     // const getLocalData = localStorage.getItem("local Data");
     // console.log(getLocalData);
 
-    idOfObj++ ;
-    
+    idOfObj++;
+
 }
 
 //  ---------------End-------------------

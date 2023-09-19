@@ -1,4 +1,8 @@
-
+// let nav1 = document.getElementById('navBar').click;
+// console.log(nav1,"clicked")
+// if(nav1 == true){
+//     location.reload(nav)
+// }
 
 // To get json data for the Notice bar
 
@@ -107,19 +111,28 @@ setTimeout(function () {
 // To get json data for the NavBar
 
 let storeNavBarData = "";
+let nav = document.getElementById("navBar");
 fetch("/NavBar/navBar.html")
         .then(res => res.text())
         .then(value => storeNavBarData = value);
 
 setTimeout(function () {
     
-    document.getElementById("navBar").innerHTML = storeNavBarData;
-    // console.log(row, "row");
+    nav.innerHTML = storeNavBarData;    
 
 }, 1000);
 
+// console.log(window.id('button'),"dkfjd");
+
+
 //  ---------------End-------------------
 
+// const navToggle = document.querySelector('div');
+// console.log(navToggle,"navtogger")
+
+// navToggle.addEventListener('click', () => {
+//     location.reload()
+// });
 
 // To get json data for the Footer
 

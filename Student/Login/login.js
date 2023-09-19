@@ -1,3 +1,14 @@
+// ////////////////////
+// loginLS = () =>{
+//     let email = document.getElementById('inputemail').value;
+
+//     for (var i = 0; i < localStorage.getItem("name").length; i++) {
+//         if (localStorage.getItem("name")[i].name === email) {
+//             console.log("login");
+//         }
+//     }
+// }
+
 
 // To display the menu on mobile view
 var div = document.getElementById('myNavbar');
@@ -21,11 +32,11 @@ function hideShow() {
 
 let storeNavBarData = "";
 fetch("/NavBar/navBar.html")
-        .then(res => res.text())
-        .then(value => storeNavBarData = value);
+    .then(res => res.text())
+    .then(value => storeNavBarData = value);
 
 setTimeout(function () {
-    
+
     document.getElementById("navBar").innerHTML = storeNavBarData;
     // console.log(row, "row");
 
@@ -37,19 +48,19 @@ setTimeout(function () {
 // To data store in local storage
 
 let storeLoginData = [];
-function loginData(email, password){
+function loginData(email, password) {
     this.email = email,
-    this.password = password
+        this.password = password
 }
 
-createLoginData =() =>{
+createLoginData = () => {
     var email = document.getElementById('inputemail').value;
     var password = document.getElementById('inputpassword').value;
 
     newLoginData = new loginData(email, password);
-    storeLoginData.push(newLoginData);    
-    console.log(storeLoginData,"jkhggfh");
-    localStorage.setItem("local Data",JSON.stringify(storeLoginData));
+    storeLoginData.push(newLoginData);
+    console.log(storeLoginData, "jkhggfh");
+    localStorage.setItem("local Data", JSON.stringify(storeLoginData));
 }
 
 //-----------End------------------
@@ -59,11 +70,11 @@ createLoginData =() =>{
 
 let storeFooterData = "";
 fetch("/footer.html")
-        .then(res => res.text())
-        .then(value => storeFooterData = value);
+    .then(res => res.text())
+    .then(value => storeFooterData = value);
 
 setTimeout(function () {
-    
+
     document.getElementById("footer").innerHTML = storeFooterData;
     // console.log(row, "row");
 
