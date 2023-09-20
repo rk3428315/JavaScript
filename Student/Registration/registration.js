@@ -1,22 +1,3 @@
-
-// To display the menu on mobile view
-var div = document.getElementById('myNavbar');
-var display = 0;
-function hideShow() {
-
-    if (display == 0) {
-        div.style.display = 'block';
-        display = 1;
-    }
-    else {
-        div.style.display = 'none';
-        display = 0;
-    }
-}
-
-//  ---------------End-------------------
-
-
 // To get json data for the Footer
 
 let storeFooterData = "";
@@ -89,7 +70,7 @@ createRegData = () => {
     storeRegData.push(newRegData);
 
     // To push object data again and again in storeRegData array
-    localStorage.setItem("name", JSON.stringify(newRegData));
+    localStorage.setItem("local Data", JSON.stringify(newRegData));
 
     // To set data in local Storage
     console.log(storeRegData, "Array Data");

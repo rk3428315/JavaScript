@@ -19,7 +19,7 @@ setTimeout(function () {
 
     // To iteral the allJSONData one by one and add in row
     allJSONData.forEach(element => {
-        row += '<a class="nav-link" href="#">' + element.first_name + '</a>';
+        row += '<a class="nav-link text-dark" href="#">' + element.first_name + '</a>';
         // console.log(element.first_name, "row");
 
     });
@@ -76,7 +76,7 @@ setTimeout(function () {
         console.log(element.img, "row");        
     });
 
-    div.innerHTML = row;
+    div.innerHTML = row;    
     // console.log(row, "row");
 
 }, 500);
@@ -113,16 +113,19 @@ setTimeout(function () {
 let storeNavBarData = "";
 let nav = document.getElementById("navBar");
 fetch("/NavBar/navBar.html")
-        .then(res => res.text())
-        .then(value => storeNavBarData = value);
+        .then(res => res.text())        
+        .then(value => storeNavBarData = value)
 
 setTimeout(function () {
-    
-    nav.innerHTML = storeNavBarData;    
+    // getNavBar = () =>{
 
-}, 1000);
+       nav.innerHTML = storeNavBarData;  
+       return nav.innerHTML  
+    // }
 
-// console.log(window.id('button'),"dkfjd");
+}, 2000);
+
+
 
 
 //  ---------------End-------------------
@@ -174,24 +177,3 @@ setTimeout(function () {
 
 //  ---------------End-------------------
 
-
-
-
-
-
-
-
-// var Ball = document.getElementById('ball');
-// var ballPosition = 0;
-
-// var pageWidth = document.getElementById('ball1').offsetWidth;
-
-// var Loop = setInterval(function () {
-//     ballPosition = Ball.offsetLeft;
-
-//     if (ballPosition < pageWidth) {
-//         Ball.style.left = ballPosition + 10 + "px";
-//     } else {
-//         Ball.style.left = 0 + "px";
-//     }
-// }, 1000/10);

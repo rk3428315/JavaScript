@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/Lib/bootstrap.css">
+  <title>Test</title>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg p-3 mb-5 bg-white fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" >
-            <a class="nav-link" href="#about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Browse Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#visit">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <style>
+    .active {
+      color: rgb(18, 228, 91);
+    }
+  </style>
+  <header>
+    <nav>
+      <ul id="myList">
+        <li class="top " data-pos="A">Text1</li>
+        <li class="top " data-pos="B">Text2</li>
+      </ul>
     </nav>
+  </header>
   <script>
-    (function () {
-    "use strict";
-    document.querySelectorAll("button.navbar-toggler")[0].addEventListener("click", function (event) {
-      var target = this.getAttribute("data-target");
-      var subbar = document.querySelectorAll(target)[0];
-      subbar.className = (subbar.className + " show").replace(/ show show/, "");
-    });
-  })();
+    var myList = document.getElementById('myList')
+    /* We will add the click listener to the parent <ul> element! */
+    myList.addEventListener('click', e => {
+      /* Create a loop and iterate over all of the <li> elements inside #myList */
+      for (var i = 0; i < myList.children.length; i++) {
+        var li = myList.children[i]
+        if (li === e.target) {
+          /*
+           If the <li> inside the current loop matches our clicked element (e.target),
+           append active class to it
+          */
+          li.classList.add('active')
+        } else {
+          /*. */
+          li.classList.remove('active')
+        }
+      }
+    })
   </script>
 </body>
+
 </html>

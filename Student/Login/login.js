@@ -1,31 +1,23 @@
 // ////////////////////
-// loginLS = () =>{
-//     let email = document.getElementById('inputemail').value;
+loginLS = () =>{
+    // let password = document.getElementById('inputpassword').value;
+    let email = document.getElementById('inputemail').value;
+    let retString = localStorage.getItem("local Data")
+    let retArray = JSON.parse(retString)
+    let retkey= Object.values(retArray);
+    // for(var j = 0; j <retString.length; j++){
+        for (var i = 0; i < retkey.length; i++) {
+            console.log(i,"local Data")
+            if (retkey[i] === email ) {
+                alert("Login");
+            }else{
+                alert("Not Login");
+    
+            }
+        }
+    // }
 
-//     for (var i = 0; i < localStorage.getItem("name").length; i++) {
-//         if (localStorage.getItem("name")[i].name === email) {
-//             console.log("login");
-//         }
-//     }
-// }
-
-
-// To display the menu on mobile view
-var div = document.getElementById('myNavbar');
-var display = 0;
-function hideShow() {
-
-    if (display == 0) {
-        div.style.display = 'block';
-        display = 1;
-    }
-    else {
-        div.style.display = 'none';
-        display = 0;
-    }
 }
-
-//  ---------------End-------------------
 
 
 // To get json data for the NavBar
@@ -47,21 +39,21 @@ setTimeout(function () {
 
 // To data store in local storage
 
-let storeLoginData = [];
-function loginData(email, password) {
-    this.email = email,
-        this.password = password
-}
+// let storeLoginData = [];
+// function loginData(email, password) {
+//     this.email = email,
+//         this.password = password
+// }
 
-createLoginData = () => {
-    var email = document.getElementById('inputemail').value;
-    var password = document.getElementById('inputpassword').value;
+// createLoginData = () => {
+//     var email = document.getElementById('inputemail').value;
+//     var password = document.getElementById('inputpassword').value;
 
-    newLoginData = new loginData(email, password);
-    storeLoginData.push(newLoginData);
-    console.log(storeLoginData, "jkhggfh");
-    localStorage.setItem("local Data", JSON.stringify(storeLoginData));
-}
+//     newLoginData = new loginData(email, password);
+//     storeLoginData.push(newLoginData);
+//     console.log(storeLoginData, "jkhggfh");
+//     localStorage.setItem("local Data", JSON.stringify(storeLoginData));
+// }
 
 //-----------End------------------
 
