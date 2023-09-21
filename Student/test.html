@@ -1,46 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test</title>
+  <title>Document</title>
+  <link rel="stylesheet" href="/Lib/bootstrap.css">
 </head>
-
 <body>
-  <style>
-    .active {
-      color: rgb(18, 228, 91);
-    }
-  </style>
-  <header>
-    <nav>
-      <ul id="myList">
-        <li class="top " data-pos="A">Text1</li>
-        <li class="top " data-pos="B">Text2</li>
-      </ul>
-    </nav>
-  </header>
-  <script>
-    var myList = document.getElementById('myList')
-    /* We will add the click listener to the parent <ul> element! */
-    myList.addEventListener('click', e => {
-      /* Create a loop and iterate over all of the <li> elements inside #myList */
-      for (var i = 0; i < myList.children.length; i++) {
-        var li = myList.children[i]
-        if (li === e.target) {
-          /*
-           If the <li> inside the current loop matches our clicked element (e.target),
-           append active class to it
-          */
-          li.classList.add('active')
-        } else {
-          /*. */
-          li.classList.remove('active')
-        }
-      }
-    })
-  </script>
-</body>
 
+</body>
 </html>

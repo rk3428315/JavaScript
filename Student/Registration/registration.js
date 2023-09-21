@@ -1,32 +1,24 @@
 // To get json data for the Footer
+// let storeFooterData = "";
+// let regFooter = document.getElementById("footer");
+// fetch("/footer.html")
+//     .then(res => res.text())
+//     .then(value => storeFooterData = value)
+//     .then(value => regFooter.innerHTML = value);
 
-let storeFooterData = "";
-fetch("/footer.html")
-    .then(res => res.text())
-    .then(value => storeFooterData = value);
-
-setTimeout(function () {
-
-    document.getElementById("footer").innerHTML = storeFooterData;
-    // console.log(row, "row");
-
-}, 1000);
+//     regFooter.innerHTML = storeFooterData;
 
 //  ---------------End-------------------
 
 // To get json data for the NavBar
+// let storeNavBarData = "";
+// let regNav = document.getElementById('navBar');
+// fetch("/NavBar/navBar.html")
+//     .then(res => res.text())
+//     .then(value => storeNavBarData = value)
+//     .then(value => regNav.innerHTML = value);
 
-let storeNavBarData = "";
-fetch("/NavBar/navBar.html")
-    .then(res => res.text())
-    .then(value => storeNavBarData = value);
-
-setTimeout(function () {
-
-    document.getElementById("navBar").innerHTML = storeNavBarData;
-    // console.log(row, "row");
-
-}, 1000);
+//     regNav.innerHTML= storeNavBarData;
 
 //  ---------------End-------------------
 
@@ -41,14 +33,14 @@ let storeRegData = [];
 // created a object for registration form data
 function regData(name, age, gender, email, password, address, city, zip) {
     this.id = idOfObj,
-        this.name = name,
-        this.age = age,
-        this.gender = gender,
-        this.email = email,
-        this.address = address,
-        this.city = city,
-        this.password = password,
-        this.zip = zip
+    this.name = name,
+    this.age = age,
+    this.gender = gender,
+    this.email = email,
+    this.address = address,
+    this.city = city,
+    this.password = password,
+    this.zip = zip
 
 }
 
@@ -82,7 +74,6 @@ createRegData = () => {
     idOfObj++;
 
 }
-
 //  ---------------End-------------------
 
 

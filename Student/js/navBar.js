@@ -1,20 +1,30 @@
-// // set Interval to get all data of menu on the all pages
-
 // var myList = document.getElementById('myNavbar')
 
+// To get the navbar content
+var myList = document.getElementById('navBar');
+fetch("/navBar.html")
+    .then(res => res.text())
+    .then(data => {
+        myList.innerHTML = data
+    })
+    .catch(err =>{
+        console.error("This is navbar error",err)
+    })
 
-// To display the menu on mobile view
-setTimeout(function () {
+
+// To display the tab in Navbar (reg, login, contact us)
+setTimeout(() => {
+
     var myList = document.getElementById('myNavbar')
-    console.log(myList);
+    // console.log(myList);
 
     var checkTime = setInterval(() => {
-        if (myList !== null)
+        if (myList)
             navData()
     }, 500);
 
     function navData() {
-        clearTimeout(checkTime);
+        clearInterval(checkTime);
 
         var myList = document.getElementById('myNavbar')
         /* We will add the click listener to the parent <ul> element! */
@@ -26,21 +36,22 @@ setTimeout(function () {
                 console.log(e.target, "target");
 
                 if (li === e.target) {
-                    li.classList.add('active')
+                    li.classList.add('show')
                 } else {
-                    li.classList.remove('active');
+                    li.classList.remove('show');
                 }
             }
         });
     }
-}, 2000);
+
+}, 1000);
 
 
 
 var display = 0;
-var div;
+
 function hideShow() {
-    div = document.getElementById('myNavbar');
+    var div = document.getElementById('myNavbar');
     console.log(div)
 
     if (display == 0) {
