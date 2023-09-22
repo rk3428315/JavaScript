@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="createCal.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div class="formstyle">
+        
+            <input  name="store" id="calc">
+                     
+            <br>
+            <br>
+            <button  id='one'  onclick="showValue(1)"> 1 </button>
+            <button  id="two"   onclick="showValue(2)"> 2 </button>
+            <button  id="three" onclick="showValue(3)"> 3 </button>
+            <button  id="clear" onclick="clears()"> C </button>
+            <br>
+            <br>
+            <button  id="four" onclick="showValue(4)"> 4 </button>
+            <button  id="five" onclick="showValue(5)"> 5 </button>
+            <button  id="six" onclick="showValue(6)"> 6 </button>
+            <button  id="minus" onclick="showSymbole('-')"> - </button>
+            <br>
+            <br>
+            <button id="seven" onclick="showValue(7)"> 7 </button>
+            <button id="eight" onclick="showValue(8)"> 8 </button>
+            <button id="nine" onclick="showValue(9)"> 9 </button>
+            <button id="plus" onclick= "showSymbole('+')"> + </button>
+            <br>
+            <br>
+            <button  id="zero" onclick="showValue(0)"> 0 </button>
+            <button  id="multiple" onclick="showSymbole('*')"> *</button>
+            <button  id="divide" onclick="showSymbole('/')"> / </button>
+            <button  id="equal" onclick="equal()"> = </button>   
+        
+    </div>
+
+    <script src="createCalculator.js"></script>
+</body>
+</html>

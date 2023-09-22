@@ -1,0 +1,13 @@
+#img {
+    border: 0px solid;
+    width: 100%;
+    overflow: hidden;
+}
+
+.para {
+    color: black;
+    font-weight: bold;
+    /* white-space: nowrap; */
+    clear: both;
+    float: left;
+}
