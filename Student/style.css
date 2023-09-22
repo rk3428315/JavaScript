@@ -1,0 +1,10 @@
+.bgcolor{
+    /* background-image: url('/Images/background.jpg'); */
+    width: 98%;
+    background-color: #dee2e6;
+}
+
+/* form bg color */
+.linear-gradient{
+    background: linear-gradient(20deg, #d83b5d, #0ddb96);
+}
