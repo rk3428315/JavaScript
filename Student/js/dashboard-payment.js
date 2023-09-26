@@ -1,7 +1,9 @@
-let payment = document.getElementById('payment');
-
-fetch("/dashboard-payment.html")
-    .then(res => res.text())
-    .then(data => {
-        payment.innerHTML = data;
-    });
+function getPayment() {
+    let payment = document.getElementById('profile');
+    
+    fetch("/dashboard-payment.html")
+        .then(res => res.text())
+        .then(data => {
+            payment.innerHTML = data;
+        });
+}

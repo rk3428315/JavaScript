@@ -62,7 +62,7 @@ createRegData = () => {
     storeRegData.push(newRegData);
 
     // To push object data again and again in storeRegData array
-    localStorage.setItem("local Data", JSON.stringify(newRegData));
+    localStorage.setItem("localData", JSON.stringify(newRegData));
 
     // To set data in local Storage
     console.log(storeRegData, "Array Data");

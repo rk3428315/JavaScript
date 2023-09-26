@@ -1,17 +1,36 @@
-// var myList = document.getElementById('myNavbar')
+function makeActive(event) {
+    var previous = document.getElementsByClassName("active");
+    for (let i = 0; i < previous.length; i++) {
+        previous[i].className = previous[i].className.replace(" active", "");
+    }
+    event.target.className += " active";
+}
+
+
+// To Show list of menu onclick menu bar
+setTimeout(() => {
+    let clickMenu = document.getElementById('showNavMenu');
+
+    clickMenu.addEventListener('click', function () {
+        document.getElementById('menuul').classList.toggle("show");
+    })
+
+}, 1000);
+// ------------------End-------------------
 
 // To get the navbar content
+// function getNavbar() {
 var myList = document.getElementById('navBar');
 fetch("/navBar.html")
     .then(res => res.text())
     .then(data => {
         myList.innerHTML = data
     })
-    .catch(err =>{
-        console.error("This is navbar error",err)
+    .catch(err => {
+        console.error("This is navbar error", err)
     })
 
-
+// }
 // To display the tab in Navbar (reg, login, contact us)
 setTimeout(() => {
 
@@ -48,22 +67,6 @@ setTimeout(() => {
 
 
 
-var display = 0;
-
-function hideShow() {
-    var div = document.getElementById('myNavbar');
-    console.log(div)
-
-    if (display == 0) {
-        div.style.display = 'block';
-        display = 1;
-    }
-    else {
-        div.style.display = 'none';
-        display = 0;
-        // location.reload();
-    }
-}
 
 //  -------------End-------------------
 

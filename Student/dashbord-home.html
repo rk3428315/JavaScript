@@ -1,5 +1,6 @@
 <body class="bgcolor">
     <link rel="stylesheet" href="style.css">
+    
 
     <!-- Start navbar  -->
     <nav id="dashnav"></nav>
@@ -10,27 +11,29 @@
     <div class="row flex-xl-nowrap  bgimage">
 
         <!-- Start notice bar -->
-        <div class="h-25  col-12 col-md-2 col-xl-2 bd-sidebar shadow  p-3 mb-5 ">
-            <ul class="list-group list-group-flush bg-white">
-                <li class="card-header" id="showProfile">Profile</li>
-                <li class="card-header"> Course </li>
-                <li class="card-header"> Apply </li>
-                <li class="card-header"> Result </li>
-                <li class="card-header"> Payment </li>
+        <div class="h-25  col-12 col-md-2 col-xl-2 bd-sidebar shadow  p-3 ">
+            <ul class="list-group list-group-flush bg-white" id="dashul">
+                <li class="card-header" type="button" onclick="getProfile()">Profile</li>
+                <li class="card-header" type="button" onclick="getCoruse()"> Course </li>
+                <li class="card-header" type="button" onclick="getApply()"> Apply </li>
+                <li class="card-header" type="button" onclick="getResult()"> Result </li>
+                <li class="card-header" type="button" onclick="getPayment()"> Payment </li>
             </ul>
         </div>
         <!-- End notice bar -->
 
         <!-- Start Dashboard Content -->
         
+        <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="profile">
+        </div>
+        <!-- <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="payment">
+        </div>
+        <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow"  id="course">
+        </div>
         <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="apply">
         </div>
-        <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="payment">
-        </div>
-        <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="course">
-        </div>
         <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="result">
-        </div>
+        </div> -->
 
     </div>
     <!-- End Dashboard Content -->

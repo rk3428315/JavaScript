@@ -1,7 +1,8 @@
-let profile = document.getElementById('showProfile');
+// let profile = document.getElementById('showProfile');
 
-profile.addEventListener("click" ,showProfile)
+// profile.addEventListener("click" ,showProfile)
 
-function showProfile(){
-    console.log(document.getElementById('profile').innerHTML) 
-}
+// function showProfile(){
+//     console.log(document.getElementById('profile').innerHTML) 
+// }
+
