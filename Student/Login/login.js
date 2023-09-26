@@ -1,3 +1,27 @@
+function getRegData() {
+    let regLocaldata = JSON.parse(localStorage.getItem('localData'));
+    // console.log(regLocaldata);
+    let email = document.getElementById('inputemail').value;
+    let password = document.getElementById('inputpassword').value;
+    for (let i = 0; i < regLocaldata.length; i++) {
+        const element = Object.values(regLocaldata[i]);
+        for (let j = 0; j < element.length; j++) {
+            // const element = element[j];
+            console.log(element[j], "el");
+            if(email === element[j]){
+                alert("Login Successfully!")
+            }
+        }        
+    }
+}
+
+
+
+
+
+
+
+
 // ////////////////////
 // loginLS = () =>{
 //     // let password = document.getElementById('inputpassword').value;

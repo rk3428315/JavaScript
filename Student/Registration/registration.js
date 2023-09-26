@@ -40,7 +40,8 @@ function regData(name, age, gender, email, password, address, city, zip) {
     this.address = address,
     this.city = city,
     this.password = password,
-    this.zip = zip
+    this.zip = zip,
+    this.isLogin = false;
 
 }
 
@@ -62,10 +63,11 @@ createRegData = () => {
     storeRegData.push(newRegData);
 
     // To push object data again and again in storeRegData array
-    localStorage.setItem("localData", JSON.stringify(newRegData));
+    localStorage.setItem("localData", JSON.stringify(storeRegData));
 
+    var regStoreData = JSON.parse(localStorage.getItem("localData"))
     // To set data in local Storage
-    console.log(storeRegData, "Array Data");
+    console.log(regStoreData, "Array Data");
 
     // To get local Storage Data
     // const getLocalData = localStorage.getItem("local Data");

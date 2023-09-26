@@ -1,7 +1,14 @@
 .bgcolor{
     /* background-image: url('/Images/background.jpg'); */
-    width: 98%;
+    
     background-color: #dee2e6;
+}
+.bgsize{
+    width: 98%;
+}
+
+.show{
+    background-color: #2c92eb;
 }
 
 /* form bg color */

@@ -1,21 +1,41 @@
-function makeActive(event) {
-    var previous = document.getElementsByClassName("active");
-    for (let i = 0; i < previous.length; i++) {
-        previous[i].className = previous[i].className.replace(" active", "");
-    }
-    event.target.className += " active";
-}
+// function makeActive(event) {
+//     var previous = document.getElementsByClassName("active");
+//     for (let i = 0; i < previous.length; i++) {
+//         previous[i].className = previous[i].className.replace(" active", "");
+//     }
+//     event.target.className += " active";
+// }
+
+// var myList = document.getElementById('navBar');
+// fetch("/Home/home.html")
+//     .then(res => res.text())
+//     .then(data => {
+//         myList.innerHTML = data
+//     })
+//     .catch(err => {
+//         console.error("This is navbar error", err)
+//     })
 
 
 // To Show list of menu onclick menu bar
 setTimeout(() => {
-    let clickMenu = document.getElementById('showNavMenu');
+    // function checkMenuInterval() {
+        let clickMenu = document.getElementById('showNavMenu');
+        let menuInterval = setInterval(() => {
+            if (clickMenu) {
+                getMenu()
+            }
+        }, 500);
+    // }
 
-    clickMenu.addEventListener('click', function () {
-        document.getElementById('menuul').classList.toggle("show");
-    })
+    function getMenu() {
+        clearInterval(menuInterval);
+        clickMenu.addEventListener('click', function () {
+            document.getElementById('menuul').classList.toggle("show");
+        })
 
-}, 1000);
+    }
+}, 500);
 // ------------------End-------------------
 
 // To get the navbar content
@@ -32,38 +52,38 @@ fetch("/navBar.html")
 
 // }
 // To display the tab in Navbar (reg, login, contact us)
-setTimeout(() => {
+// setTimeout(() => {
 
-    var myList = document.getElementById('myNavbar')
-    // console.log(myList);
+//     var myList = document.getElementById('myNavbar')
+//     // console.log(myList);
 
-    var checkTime = setInterval(() => {
-        if (myList)
-            navData()
-    }, 500);
+//     var checkTime = setInterval(() => {
+//         if (myList)
+//             navData()
+//     }, 500);
 
-    function navData() {
-        clearInterval(checkTime);
+//     function navData() {
+//         clearInterval(checkTime);
 
-        var myList = document.getElementById('myNavbar')
-        /* We will add the click listener to the parent <ul> element! */
-        myList.addEventListener('click', e => {
-            /* Create a loop and iterate over all of the <li> elements inside #myList */
-            for (var i = 0; i < myList.children.length; i++) {
-                var li = myList.children[i];
-                console.log(li, "li");
-                console.log(e.target, "target");
+//         var myList = document.getElementById('myNavbar')
+//         /* We will add the click listener to the parent <ul> element! */
+//         myList.addEventListener('click', e => {
+//             /* Create a loop and iterate over all of the <li> elements inside #myList */
+//             for (var i = 0; i < myList.children.length; i++) {
+//                 var li = myList.children[i];
+//                 console.log(li, "li");
+//                 console.log(e.target, "target");
 
-                if (li === e.target) {
-                    li.classList.add('show')
-                } else {
-                    li.classList.remove('show');
-                }
-            }
-        });
-    }
+//                 if (li === e.target) {
+//                     li.classList.add('show')
+//                 } else {
+//                     li.classList.remove('show');
+//                 }
+//             }
+//         });
+//     }
 
-}, 1000);
+// }, 1000);
 
 
 
@@ -163,3 +183,15 @@ setTimeout(() => {
 //  ---------------End-------------------
 
 
+    // var clickButton = document.getElementsByClassName('nav-item');
+    // for (let i = 0; i < clickButton.length; i++) {
+    //     clickButton[i].addEventListener("click", function () {
+
+    //         var current = document.getElementsByClassName("active");
+    //         if(current.length > 0){
+
+    //             current[0].className = current[0].className.replace(" active", "");
+    //         }
+    //         this.className += " active"
+    //     })
+    // }

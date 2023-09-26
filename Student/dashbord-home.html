@@ -1,5 +1,6 @@
 <body class="bgcolor">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Lib/bootstrap.css">
     
 
     <!-- Start navbar  -->
@@ -15,7 +16,6 @@
             <ul class="list-group list-group-flush bg-white" id="dashul">
                 <li class="card-header" type="button" onclick="getProfile()">Profile</li>
                 <li class="card-header" type="button" onclick="getCoruse()"> Course </li>
-                <li class="card-header" type="button" onclick="getApply()"> Apply </li>
                 <li class="card-header" type="button" onclick="getResult()"> Result </li>
                 <li class="card-header" type="button" onclick="getPayment()"> Payment </li>
             </ul>
@@ -24,7 +24,7 @@
 
         <!-- Start Dashboard Content -->
         
-        <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="profile">
+        <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow active" id="profile">
         </div>
         <!-- <div class="col-12 col-md-10 col-yl-8 py-md-3 pl-md-5 bd-content bg-white shadow" id="payment">
         </div>
@@ -45,8 +45,7 @@
     <script src="/js/footer.js"></script>
     <script src="/js/dashboard-nav.js"></script>
     <script src="/js/dashboard-profile.js"></script>
-    <script src="/js/dashboard-course.js"></script>
-    <script src="/js/dashboard-apply.js"></script>
+    <script src="/js/dashboard-course.js"></script>    
     <script src="/js/dashboard-payment.js"></script>
     <script src="/js/dashboard-result.js"></script>
 </body>

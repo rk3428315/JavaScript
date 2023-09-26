@@ -34,7 +34,7 @@ function getNoticeBar (){
 
 
 
-
+// To the crousel scroll 
 var photos = ["/Images/slide2.jpg", "/Images/slide3.jpg","/Images/slideImage1.jpeg"]
 var imgTag = document.querySelector("img");
 var count = 0;
@@ -64,6 +64,7 @@ function prev() {
     }
 }
 
+//---------------End-------------------
 
 // To get json data for the first images with text
 let storeImg1Data = [];
@@ -153,4 +154,5 @@ function getImagesKira(){
 // }, 1000)
 
 //  ---------------End-------------------
+
 

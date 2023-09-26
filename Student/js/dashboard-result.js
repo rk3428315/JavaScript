@@ -7,3 +7,8 @@ function getResult() {
             result.innerHTML = data;
         });
 }
+
+
+function printResult(){
+    window.print();
+}
