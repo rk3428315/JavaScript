@@ -74,6 +74,7 @@ createRegData = () => {
     // console.log(getLocalData);
 
     idOfObj++;
+    alert("Registration Successfully!")
 
 }
 //  ---------------End-------------------
