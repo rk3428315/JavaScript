@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.student_portal.com</title>
+    <title>www.student_dashboard.com</title>
     <link rel="stylesheet" href="/Lib/bootstrap.css">
     <link rel="stylesheet" href="navBar.css">
 </head>
@@ -13,32 +13,23 @@
     <!-- Part of navbar -->
 
     <div class="fixed-top ">
-        <nav class="navbar navbar-inverse shadow navbar navbar-expand-lg bg-secondary" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <div class="container-fluid ">
-                <a class="navbar-brand " href="/Home/homePage.html">
+                <a class="navbar-brand text-uppercase" href="/Home/homePage.html">
                     <img src="/Images/Logo.png" alt="ll" width="50" height="50"
-                        class="d-inline-block align-text-top rounded-circle">
+                        class="d-inline-block  align-center rounded-circle al">
+                        Student Portal
                 </a>
-
-                <h2 class="nav justify-content-center text-uppercase text-dark">Student Dashboard </h2>
-
-                <button class="navbar-toggler" type="button" id="button" onclick="hideShow();" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                    </svg>
-                </button>
-
-                <ul class="nav navbar-right" id="myNavbar">
-                    <li class="nav-item"><a class="nav-link   " aria-current="page"
-                            href="/contactUs/contactUs.html">Home</a></li>
-                </ul>
-
+                <div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                          </svg>
+                    </div>
+                </div>
+                
             </div>
-
         </nav>
     </div>
     <!-- Navbar part End -->

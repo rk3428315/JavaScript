@@ -34,33 +34,37 @@ function getNoticeBar (){
 
 
 
+// To the crousel scroll 
+var photos = ["/Images/slide2.jpg", "/Images/slide3.jpg","/Images/slideImage1.jpeg"]
+var imgTag = document.querySelector("img");
+var count = 0;
+setInterval(() => {
+    next();
 
-// To get json data for the four image
+}, 5000);
 
-let storeImgData = [];
-fetch('/JsonData/imgData.json')
-.then(function(res){
-    res.json().then(function(value){
-        storeImgData = value;
-        fourImages();
-    })
-})
+function next() {
 
-function fourImages(){
-    let div = document.getElementById('img');
-    var row = "";
-    let id = 0;
-    // To iteral the allJSONData one by one and add in row
-    storeImgData.forEach(element => {
-        row += '<div class="col-sm-3 col-3 " id="img1"><img src="' + element.img + '" alt="error" class=" h-100 w-100 "></div>'
-        console.log(element.img, "row");
-        
-    });
-
-    div.innerHTML = row;
+    count++;
+    if (count >= photos.length) {
+        count = 0;
+        imgTag.src = photos[count];
+    } else {
+        imgTag.src = photos[count];
+    }
 }
-//  ---------------End-------------------
 
+function prev() {
+    count--;
+    if (count < 0) {
+        count = photos.length - 1;
+        imgTag.src = photos[count];
+    } else {
+        imgTag.src = photos[count];
+    }
+}
+
+//---------------End-------------------
 
 // To get json data for the first images with text
 let storeImg1Data = [];
@@ -150,4 +154,5 @@ function getImagesKira(){
 // }, 1000)
 
 //  ---------------End-------------------
+
 

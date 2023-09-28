@@ -1,3 +1,41 @@
+// Onclick Login button find the existing cridential and redirect to dashboard
+
+
+window.history.forward();
+
+function getLoginData() {
+    let loginLocaldata = JSON.parse(localStorage.getItem('localData'));
+    let email = document.getElementById('inputemail').value;
+    let password = document.getElementById('inputpassword').value;
+    if (email  && password ) {
+        // To iterate the all value from local Storage data
+        for (var res of loginLocaldata) {
+
+            // If email and password is true then login 
+            // and redirect into dashboard home Page
+
+            if (email === res.email && password === res.password) {
+                alert("Login Successfully!");
+                window.location.href = "/dashbord-home.html";
+                
+            }
+            // noBack();
+        }
+    }
+    else {
+        alert("Please Enter the correct credentials!")
+    }
+}
+
+//-------------End--------------------------
+
+
+
+
+
+
+
+
 // ////////////////////
 // loginLS = () =>{
 //     // let password = document.getElementById('inputpassword').value;
