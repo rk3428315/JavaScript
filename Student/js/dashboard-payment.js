@@ -1,5 +1,5 @@
 function getPayment() {
-    let payment = document.getElementById('profile');
+    let payment = document.getElementById('showDashNoticeData');
     
     fetch("/dashboard-payment.html")
         .then(res => res.text())

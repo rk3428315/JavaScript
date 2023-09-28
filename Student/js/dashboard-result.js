@@ -1,5 +1,5 @@
 function getResult() {
-    let result = document.getElementById('profile');
+    let result = document.getElementById('showDashNoticeData');
 
     fetch("/dashboard-result.html")
         .then(res => res.text())

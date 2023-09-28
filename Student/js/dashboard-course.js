@@ -1,5 +1,5 @@
 function getCoruse() {
-    let course = document.getElementById('profile');
+    let course = document.getElementById('showDashNoticeData');
 
     fetch("/dashboard-course.html")
         .then(res => res.text())

@@ -1,5 +1,5 @@
 function getApply() {
-    let apply = document.getElementById('profile');
+    let apply = document.getElementById('showDashNoticeData');
     
     fetch("/dashboard-apply.html")
         .then(res => res.text())
