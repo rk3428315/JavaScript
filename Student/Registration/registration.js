@@ -42,10 +42,9 @@ function regData(name, age, gender, email, password, address, city, zip) {
     this.password = password,
     this.zip = zip,
     this.isLogin = false;
-
 }
 
-// to create the data as object form registration input field
+// To create the data as object form registration input field
 createRegData = () => {
 
     // For the access the field data of registration form
@@ -65,7 +64,8 @@ createRegData = () => {
     // To push object data again and again in storeRegData array
     localStorage.setItem("localData", JSON.stringify(storeRegData));
 
-    var regStoreData = JSON.parse(localStorage.getItem("localData"))
+    var regStoreData = JSON.parse(localStorage.getItem("localData"));
+
     // To set data in local Storage
     console.log(regStoreData, "Array Data");
 
@@ -74,7 +74,7 @@ createRegData = () => {
     // console.log(getLocalData);
 
     idOfObj++;
-    alert("Registration Successfully!")
+    alert("Registration Successfully!");
 
 }
 //  ---------------End-------------------
