@@ -26,7 +26,6 @@ function getNoticeBar (){
         // console.log(element.first_name, "row");
 
     });
-
     div.innerHTML = row;
 }
 

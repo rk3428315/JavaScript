@@ -1,24 +1,24 @@
-// let profile = document.getElementById('showProfile');
+window.history.forward();
 
-// profile.addEventListener("click" ,showProfile)
+// To show the active  tab on click
+var myList = document.getElementById('dashul')
+/* We will add the click listener to the parent <ul> element! */
+myList.addEventListener('click', e => {
+    /* Create a loop and iterate over all of the <li> elements inside #myList */
+    for (var i = 0; i < myList.children.length; i++) {
 
-// function showProfile(){
-//     console.log(document.getElementById('profile').innerHTML) 
-// }
+        var li = myList.children[i];
+
+        if (li === e.target) {    
+
+            li.classList.add('show')
+        } else {            
+            
+            li.classList.remove('show')
+        }
+    }
+});
+//----------------------End---------------------------
 
 
-
-// function makeActive() {
-    // var clickButton = document.getElementsByClassName('card-header');
-    // for (let i = 0; i < clickButton.length; i++) {
-    //     clickButton[i].addEventListener("click", function () {
-
-    //         var current = document.getElementsByClassName("active");
-    //         if(current.length > 0){
-
-    //             current[0].className = current[0].className.replace(" active", "");
-    //         }
-    //         this.className += " active"
-    //     })
-    // }
-// }
+    

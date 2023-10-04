@@ -7,11 +7,10 @@
     width: 98%;
 }
 
-    /* .show{
-        background-color: #2c92eb;
-    } */
+.show{
+    background-color: #2c92eb;
+}
 
-/* form bg color */
-/* .linear-gradient{
-    background: linear-gradient(20deg, #d83b5d, #0ddb96);
-} */
+.activeProfile{
+    display: block;
+}

@@ -1,22 +1,3 @@
-// function makeActive(event) {
-//     var previous = document.getElementsByClassName("active");
-//     for (let i = 0; i < previous.length; i++) {
-//         previous[i].className = previous[i].className.replace(" active", "");
-//     }
-//     event.target.className += " active";
-// }
-
-// var myList = document.getElementById('navBar');
-// fetch("/Home/home.html")
-//     .then(res => res.text())
-//     .then(data => {
-//         myList.innerHTML = data
-//     })
-//     .catch(err => {
-//         console.error("This is navbar error", err)
-//     })
-
-
 // To Show list of menu onclick menu bar
 setTimeout(() => {
     // function checkMenuInterval() {
@@ -39,16 +20,15 @@ setTimeout(() => {
 // ------------------End-------------------
 
 // To get the navbar content
-// function getNavbar() {
 var myList = document.getElementById('navBar');
 fetch("/navBar.html")
     .then(res => res.text())
     .then(data => {
-        myList.innerHTML = data
+        myList.innerHTML = data;
     })
     .catch(err => {
-        console.error("This is navbar error", err)
-    })
+        console.error("This is navbar error", err);
+    });
 
 // }
 // To display the tab in Navbar (reg, login, contact us)
