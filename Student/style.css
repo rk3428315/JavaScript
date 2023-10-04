@@ -7,8 +7,12 @@
     width: 98%;
 }
 
-.show{
+.showActive{
     background-color: #2c92eb;
+}
+
+.showActive1{
+    text-shadow: 0 0 black;
 }
 
 .activeProfile{

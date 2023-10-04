@@ -24,7 +24,6 @@
 
 
 // To store data of registration form
-
 // id for the object
 let idOfObj = 1;
 // Array to store the object data one by one 

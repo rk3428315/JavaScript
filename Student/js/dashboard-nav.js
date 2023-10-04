@@ -11,14 +11,11 @@ fetch("/dashboard-nav.html")
 
 // To Logout from dashboard page
 function logout() {
-
-    var result = confirm("Press a button!");
+    var result = confirm("Are you sure want to Logout !");
     if (result == true) {
         let removeLoggedData = localStorage.removeItem("loginData");
         console.log(removeLoggedData);
         window.location.href = "/Home/homePage.html";
-    }
-
+    }    
 }
-
 //-----------End--------------

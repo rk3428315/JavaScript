@@ -12,20 +12,20 @@ function getLoginData() {
         // To iterate the all value from local Storage data
         for (var res of loginLocaldata) {
 
-            console.log(res,"res Data")
+            // console.log(res,"res Data");
             // If email and password is true then login 
             // and redirect into dashboard home Page
-            var isLogin = false;
+            
             if (email === res.email && password === res.password) {
                 alert("Login Successfully!");
-                isLogin = true;              
+                res.isLogin = true;              
                 let storeLoggedData = res;
                 console.log(storeLoggedData,"Login Data");
                 localStorage.setItem("loginData", JSON.stringify(storeLoggedData));
                 
             }
 
-            if(isLogin == true){
+            if(res.isLogin == true){
                 window.location.href = "/dashbord-home.html";
             }
         }
