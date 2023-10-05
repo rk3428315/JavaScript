@@ -4,8 +4,22 @@ window.history.forward();
 function getLoginData() {
     
     let loginLocaldata = JSON.parse(localStorage.getItem('localData'));
+
     let email = document.getElementById('inputemail').value;
+    if (email.length < 1) {
+        document.getElementById("email").innerHTML =
+            ` <p class="text-danger"> Please enter your email</p>`;
+    } else {
+        document.getElementById("email").innerHTML = "";
+    }
+
     let password = document.getElementById('inputpassword').value;
+    if (email.length < 1) {
+        document.getElementById("password").innerHTML =
+            ` <p class="text-danger"> Please enter your password</p>`;
+    } else {
+        document.getElementById("password").innerHTML = "";
+    }
 
     if (email  && password ) {
 
@@ -24,15 +38,15 @@ function getLoginData() {
                 localStorage.setItem("loginData", JSON.stringify(storeLoggedData));
                 
             }
-
-            if(res.isLogin == true){
+            
+            if (res.isLogin == true) {
                 window.location.href = "/dashbord-home.html";
             }
         }
     }
-    else {
-        alert("Please Enter the correct credentials!")
-    }
+    // else {
+    //     alert("Please Enter the correct credentials!")
+    // }
 }
 
 //-------------End--------------------------

@@ -1,38 +1,22 @@
-// let ur = window.location.href;
-// let ur1 = document.location.href;
-// console.log(ur,"ur",ur1,"ur1")
-
 window.history.forward();
 
-// window.addEventListener('storage', function (event) {
-//     if (event.key == 'logout-event') {
-//         window.location = 'signin?logoutAllTabs=yes';
-//     }
-// }, false);
+// To redirect on the dashboard page in not logout the page
+function stopRedirectingOnDasboardwithoutLogin() {
+    let currentURL = window.location.href;
+    window.addEventListener("load", function () {
+        let loginLocalData = localStorage.getItem('loginData');
+        // console.log(regLocalData,"regLocalData");
+    
+        // const userData = JSON.parse(loginLocalData);
+        // console.log(userData.isLogin, "userData");
+        if (loginLocalData === null ) {    
+            window.location.href = "/Home/homePage.html";
+        }
+    })
+}
+stopRedirectingOnDasboardwithoutLogin();
+//----------------------End---------------------
 
-
-window.addEventListener("load", function () {
-    let regLocalData = localStorage.getItem('loginData');
-    // console.log(regLocalData,"regLocalData");
-
-    const userData = JSON.parse(regLocalData);
-    if (regLocalData) {
-
-        // console.log(userData.isLogin, "isLogin")
-        // Get the Array item which matchs the id "2"
-        // const result = userData.for(
-        //     (userData) => userData.isLogin === true
-        // );
-        // const result = userData.forEach(element => {
-        //     element.isLogin === true;
-        // });
-    }
-
-    if (userData.isLogin === true ) {
-        window.location.href = "/dashbord-home.html";
-    }
-
-})
 
 
 // To show the active  tab on click
