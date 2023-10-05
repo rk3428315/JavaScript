@@ -5,16 +5,19 @@ function getLoginData() {
     
     let loginLocaldata = JSON.parse(localStorage.getItem('localData'));
 
-    let email = document.getElementById('inputemail').value;
-    if (email.length < 1) {
+    var email = document.getElementById('inputemail').value;
+    var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+    if (!regexEmail.test(email) == true) {
         document.getElementById("email").innerHTML =
-            ` <p class="text-danger"> Please enter your email</p>`;
+        `<p class="text-danger"> Please enter your email</p>`;
+        return false
     } else {
         document.getElementById("email").innerHTML = "";
+        // return true;
     }
 
-    let password = document.getElementById('inputpassword').value;
-    if (email.length < 1) {
+    var password = document.getElementById('inputpassword').value;
+    if (password.length < 1) {
         document.getElementById("password").innerHTML =
             ` <p class="text-danger"> Please enter your password</p>`;
     } else {

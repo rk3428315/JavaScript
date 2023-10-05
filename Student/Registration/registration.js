@@ -48,11 +48,13 @@ createRegData = () => {
 
     var email = document.getElementById('inputemail').value;
     var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-    if (!email.match(regexEmail)) {
+    if (!regexEmail.test(email) == true) {
         document.getElementById("email").innerHTML =
         `<p class="text-danger"> Please enter your email</p>`;
+        return false
     } else {
         document.getElementById("email").innerHTML = "";
+        // return true;
     }
 
     var password = document.getElementById('inputpassword').value;
