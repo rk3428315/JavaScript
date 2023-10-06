@@ -50,7 +50,7 @@ createRegData = () => {
     var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
     if (!regexEmail.test(email) == true) {
         document.getElementById("email").innerHTML =
-        `<p class="text-danger"> Please enter your email</p>`;
+            `<p class="text-danger"> Please enter your email</p>`;
         return false
     } else {
         document.getElementById("email").innerHTML = "";
@@ -64,7 +64,7 @@ createRegData = () => {
     } else {
         document.getElementById("password").innerHTML = "";
     }
-    
+
     var address = document.getElementById('inputaddress').value;
     if (address.length < 1) {
         document.getElementById("address").innerHTML =
@@ -110,6 +110,16 @@ createRegData = () => {
         idOfObj++;
         // window.location.href = "/Login/login.html";
     }
+
+    // To clear the all input fields data after registration
+    name = document.getElementById('inputname').value = "";
+    age = document.getElementById('inputage').value = "";
+    gender = document.getElementById('inputgender').value = "";
+    email = document.getElementById('inputemail').value = "";
+    password = document.getElementById('inputpassword').value = "";
+    address = document.getElementById('inputaddress').value = "";
+    city = document.getElementById('inputcity').value = "";
+    zip = document.getElementById('inputzip').value = "";
 
 
 
