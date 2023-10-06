@@ -4,6 +4,23 @@
 //     location.reload(nav)
 // }
 
+// To redirect on the dashboard page in not logout the page
+function stopRedirectingOnDasboard() {
+    window.addEventListener("load", function () {
+        let loginLocalData = localStorage.getItem('loginData');
+        // console.log(regLocalData,"regLocalData");
+    
+        const userData = JSON.parse(loginLocalData);
+        // console.log(userData.isLogin, "userData");
+        if (userData.isLogin === true) {    
+            window.location.replace('/dashbord-home.html');
+        }
+    })
+}
+stopRedirectingOnDasboard();
+//----------------------End---------------------
+
+
 
 // To get json data for the Notice bar
 var allJSONData = [];
@@ -34,7 +51,7 @@ function getNoticeBar (){
 
 
 // To the crousel scroll 
-var photos = ["/Images/slide2.jpg", "/Images/slide3.jpg","/Images/slideImage1.jpeg"]
+var photos = ["/Images/slide2.jpg", "/Images/Slide5.jpg","/Images/slideImage1.jpeg"]
 var imgTag = document.querySelector("img");
 var count = 0;
 setInterval(() => {
@@ -82,7 +99,7 @@ function getImagesNaruto(){
 
     // To iteral the allJSONData one by one and add in row
     storeImg1Data.forEach(element => {
-        row += '<div class="col-md-6"><img src="'+element.img+'" alt="kk" class="rounded-circle d-inline-block align-text-top h-100 w-100 p-3"></div><div class="col-md-6" style="align-self: center;"><h5>L and Light</h5><hr>'+element.text+'</div>'
+        row += '<div class="col-md-6"><img src="'+element.img+'" alt="kk" class="rounded-circle d-inline-block align-text-top h-100 w-100 p-3"></div><div class="col-md-6" style="align-self: center;"><h5> Naruto </h5><hr>'+element.text+'</div>'
         console.log(element.img, "row");        
     });
 

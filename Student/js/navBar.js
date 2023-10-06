@@ -1,13 +1,12 @@
 // To Show list of menu onclick menu bar
 setTimeout(() => {
-    // function checkMenuInterval() {
-        let clickMenu = document.getElementById('showNavMenu');
-        let menuInterval = setInterval(() => {
-            if (clickMenu) {
-                getMenu()
-            }
-        }, 500);
-    // }
+
+    let clickMenu = document.getElementById('showNavMenu');
+    let menuInterval = setInterval(() => {
+        if (clickMenu) {
+            getMenu()
+        }
+    }, 500);
 
     function getMenu() {
         clearInterval(menuInterval);
@@ -18,6 +17,35 @@ setTimeout(() => {
     }
 }, 500);
 // ------------------End-------------------
+
+// To show the active  tab on click
+// function getActive() {
+    setTimeout(() => {
+
+        var myList1 = document.getElementById('activePage');
+
+        /* We will add the click listener to the parent <ul> element! */
+        myList1.addEventListener('click', e => {
+
+            /* Create a loop and iterate over all of the <li> elements inside #myList */
+            for (var i = 0; i < myList.children.length; i++) {
+
+                var li = myList.children[i];
+
+                if (li === e.target) {
+
+                    li.classList.add('showActive1')
+                } else {
+
+                    li.classList.remove('showActive1')
+                }
+            }
+        });
+
+    }, 1000);
+// }
+//----------------------End---------------------------
+
 
 // To get the navbar content
 var myList = document.getElementById('navBar');
@@ -163,15 +191,15 @@ fetch("/navBar.html")
 //  ---------------End-------------------
 
 
-    // var clickButton = document.getElementsByClassName('nav-item');
-    // for (let i = 0; i < clickButton.length; i++) {
-    //     clickButton[i].addEventListener("click", function () {
+// var clickButton = document.getElementsByClassName('nav-item');
+// for (let i = 0; i < clickButton.length; i++) {
+//     clickButton[i].addEventListener("click", function () {
 
-    //         var current = document.getElementsByClassName("active");
-    //         if(current.length > 0){
+//         var current = document.getElementsByClassName("active");
+//         if(current.length > 0){
 
-    //             current[0].className = current[0].className.replace(" active", "");
-    //         }
-    //         this.className += " active"
-    //     })
-    // }
+//             current[0].className = current[0].className.replace(" active", "");
+//         }
+//         this.className += " active"
+//     })
+// }

@@ -1,5 +1,24 @@
 window.history.forward();
 
+// To redirect on the dashboard page in not logout the page
+function stopRedirectingOnDasboardwithoutLogin() {
+    let currentURL = window.location.href;
+    window.addEventListener("load", function () {
+        let loginLocalData = localStorage.getItem('loginData');
+        // console.log(regLocalData,"regLocalData");
+    
+        // const userData = JSON.parse(loginLocalData);
+        // console.log(userData.isLogin, "userData");
+        if (loginLocalData === null ) {    
+            window.location.href = "/Home/homePage.html";
+        }
+    })
+}
+stopRedirectingOnDasboardwithoutLogin();
+//----------------------End---------------------
+
+
+
 // To show the active  tab on click
 var myList = document.getElementById('dashul')
 /* We will add the click listener to the parent <ul> element! */
@@ -9,16 +28,16 @@ myList.addEventListener('click', e => {
 
         var li = myList.children[i];
 
-        if (li === e.target) {    
+        if (li === e.target) {
 
-            li.classList.add('show')
-        } else {            
-            
-            li.classList.remove('show')
+            li.classList.add('showActive')
+        } else {
+
+            li.classList.remove('showActive')
         }
     }
 });
 //----------------------End---------------------------
 
 
-    
+// window.stop();
