@@ -17,7 +17,7 @@ stopRedirectingOnDasboard();
 
 // To store data of registration form
 // id for the object
-let idOfObj = 1;
+let idOfObj = (Math.floor(Math.random() * 20000));;
 // Array to store the object data one by one 
 let storeRegData = {};
 let regPreviousData = []
@@ -145,7 +145,7 @@ createRegData = () => {
 
         }
         alert("Registration Successfully!");
-        idOfObj++;
+        // idOfObj++;
         window.location.href = "/Login/login.html";
 
     }
