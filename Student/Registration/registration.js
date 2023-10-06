@@ -2,7 +2,8 @@
 // id for the object
 let idOfObj = 1;
 // Array to store the object data one by one 
-let storeRegData = [];
+let storeRegData = {};
+let regPreviousData = []
 
 // created a object for registration form data
 function regData(name, age, gender, email, password, address, city, zip) {
@@ -47,6 +48,13 @@ createRegData = () => {
     }
 
     var email = document.getElementById('inputemail').value;
+
+    
+    // let regLocalData = localStorage.getItem("localData");
+    // for (let i = 0; i < regLocalData.length; i++) {
+    //     console.log(regLocalData[i],"regLocalData");
+        
+    // }
     var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
     if (!regexEmail.test(email) == true) {
         document.getElementById("email").innerHTML =
@@ -54,8 +62,9 @@ createRegData = () => {
         return false
     } else {
         document.getElementById("email").innerHTML = "";
-        // return true;
+
     }
+
 
     var password = document.getElementById('inputpassword').value;
     if (password.length < 1) {
@@ -92,23 +101,31 @@ createRegData = () => {
     if (name != "" && age != "" && gender != "" && email != "" && password != "" && address != "" && city != "" && zip != "") {
         // To create new object
         newRegData = new regData(name, age, gender, email, password, address, city, zip);
-        storeRegData.push(newRegData);
 
-        // To push object data again and again in storeRegData array
-        localStorage.setItem("localData", JSON.stringify(storeRegData));
+        // To push object data again and again in storeRegData array        
+        // storeRegData.push(newRegData);
+        // console.log(typeof storeRegData, "storeRegData");
+        if (localStorage.getItem("localData") != null) {
 
-        var regStoreData = JSON.parse(localStorage.getItem("localData"));
+            const getCurrentCart = window.localStorage.getItem('localData');
+            const currentCart = JSON.parse(getCurrentCart);
 
-        // To set data in local Storage
-        console.log(regStoreData, "Array Data");
+            currentCart.push(newRegData);
 
-        // To get local Storage Data
-        // const getLocalData = localStorage.getItem("local Data");
-        // console.log(getLocalData);
+            window.localStorage.setItem('localData', JSON.stringify(currentCart));
 
+
+
+        } else {
+            let currentCart = [];
+            currentCart.push(newRegData);
+            window.localStorage.setItem('localData', JSON.stringify(currentCart));
+
+        }
         alert("Registration Successfully!");
         idOfObj++;
-        // window.location.href = "/Login/login.html";
+        window.location.href = "/Login/login.html";
+
     }
 
     // To clear the all input fields data after registration
@@ -121,9 +138,8 @@ createRegData = () => {
     city = document.getElementById('inputcity').value = "";
     zip = document.getElementById('inputzip').value = "";
 
+    // window.location.href="/Login/login.html"
 
 
 }
 //  ---------------End-------------------
-
-

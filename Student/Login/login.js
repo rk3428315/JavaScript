@@ -29,7 +29,7 @@ function getLoginData() {
         // To iterate the all value from local Storage data
         for (var res of loginLocaldata) {
 
-            // console.log(res,"res Data");
+            console.log(res.email,"res Data");
             // If email and password is true then login 
             // and redirect into dashboard home Page
             

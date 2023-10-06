@@ -4,118 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test 1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
 </head>
 
 <body>
-
-
-    <button onclick="prev()">prev</button>
-    <!-- <img src="/Images/image3.jpeg" alt="" style="width:500px; height: 400px;"> -->
-    <button onclick="next()">Next</button>
-
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" id="ul">
-            <div class="carousel-item active" id="li1">
-                <img src="/Images/image3.jpeg" alt="" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" onclick="prev()" type="button"
-            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" id="button-prev">
-            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" onclick="next()" type="button"
-            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" id="button-next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    <h1></h1>
     <script>
-        var photos = ["/Images/image1.jpeg", "/Images/image4.jpeg", "/Images/image2.jpeg", "/Images/image5.jpeg"]
+        // To store data of registration form
+        // id for the object
+        let idOfObj = 1;
+        // Array to store the object data one by one 
+        let storeRegData = [];
+        let regPreviousData = []
 
-        var imgTag = document.querySelector("img");
-        var count = 0;
-        setInterval(() => {
-            next();
-
-        }, 5000);
-
-        function next() {
-
-            count++;
-            if (count >= photos.length) {
-                count = 0;
-                imgTag.src = photos[count];
-            } else {
-                imgTag.src = photos[count];
-            }
+        // created a object for registration form data
+        function regData(name, age, gender, email, password, address, city, zip) {
+            this.id = idOfObj,
+                this.name = name,
+                this.age = age,
+                this.gender = gender,
+                this.email = email,
+                this.address = address,
+                this.city = city,
+                this.password = password,
+                this.zip = zip,
+                this.isLogin = false;
         }
 
-        function prev() {
-            count--;
-            if (count < 0) {
-                count = photos.length - 1;
-                imgTag.src = photos[count];
+        // To create the data as object form registration input field
+        createRegData = () => {
+
+            // For the access the field data of registration form
+            var name = document.getElementById('inputname').value;
+            if (name.length < 1) {
+                document.getElementById("name").innerHTML =
+                    ` <p class="text-danger"> Please enter your name</p>`;
             } else {
-                imgTag.src = photos[count];
+                document.getElementById("name").innerHTML = "";
             }
+
+            var age = document.getElementById('inputage').value;
+            if (age.length < 1) {
+                document.getElementById("age").innerHTML =
+                    ` <p class="text-danger"> Please enter your age</p>`;
+            } else {
+                document.getElementById("age").innerHTML = "";
+            }
+
+            var gender = document.getElementById('inputgender').value;
+            if (gender.length < 1) {
+                document.getElementById("gender").innerHTML =
+                    ` <p class="text-danger"> Please enter your gender</p>`;
+            } else {
+                document.getElementById("gender").innerHTML = "";
+            }
+
+            var email = document.getElementById('inputemail').value;
+            var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            if (!regexEmail.test(email) == true) {
+                document.getElementById("email").innerHTML =
+                    `<p class="text-danger"> Please enter your email</p>`;
+                return false
+            } else {
+                document.getElementById("email").innerHTML = "";
+
+            }
+
+            var password = document.getElementById('inputpassword').value;
+            if (password.length < 1) {
+                document.getElementById("password").innerHTML =
+                    ` <p class="text-danger"> Please enter your password</p>`;
+            } else {
+                document.getElementById("password").innerHTML = "";
+            }
+
+            var address = document.getElementById('inputaddress').value;
+            if (address.length < 1) {
+                document.getElementById("address").innerHTML =
+                    ` <p class="text-danger"> Please enter your address</p>`;
+            } else {
+                document.getElementById("address").innerHTML = "";
+            }
+
+            var city = document.getElementById('inputcity').value;
+            if (city.length < 1) {
+                document.getElementById("city").innerHTML =
+                    ` <p class="text-danger"> Please enter your city</p>`;
+            } else {
+                document.getElementById("city").innerHTML = "";
+            }
+
+            var zip = document.getElementById('inputzip').value;
+            if (zip.length < 1) {
+                document.getElementById("zip").innerHTML =
+                    ` <p class="text-danger"> Please enter your zip</p>`;
+            } else {
+                document.getElementById("zip").innerHTML = "";
+            }
+
+            if (name != "" && age != "" && gender != "" && email != "" && password != "" && address != "" && city != "" && zip != "") {
+                // To create new object
+                newRegData = new regData(name, age, gender, email, password, address, city, zip);
+
+                // To push object data again and again in storeRegData array        
+                storeRegData.push(newRegData);
+                // console.log(typeof storeRegData, "storeRegData");
+                if (localStorage != null) {
+
+                    regPreviousData = JSON.parse(localStorage.getItem("localData"));
+
+                    localStorage.setItem("localData", JSON.stringify(storeRegData));
+                    var regStoreData = [];
+
+
+                    regStoreData = JSON.parse(localStorage.getItem("localData"));
+
+                    regStoreData.push(regPreviousData);
+
+                    localStorage.setItem("localData", JSON.stringify(regStoreData));
+
+                    regStoreData = JSON.parse(localStorage.getItem("localData"));
+
+                    // console.log(result);
+                    // let regPreviousData = JSON.parse(localStorage.getItem("localData"));
+                    // regStoreData.push(regPreviousData);
+                    // regStoreData.push(localStorage.setItem("localData", JSON.stringify(storeRegData)));
+
+                    // regStoreData = JSON.parse(localStorage.getItem("localData"));
+
+                    // // To set data in local Storage
+                    // console.log(regStoreData, "Array Data");
+
+                    // To get local Storage Data
+                    // const getLocalData = localStorage.getItem("local Data");
+                    // console.log(getLocalData);
+
+                    alert("Registration Successfully!");
+                    idOfObj++;
+                    // window.location.href = "/Login/login.html";
+                }
+
+            }
+
+            // To clear the all input fields data after registration
+            name = document.getElementById('inputname').value = "";
+            age = document.getElementById('inputage').value = "";
+            gender = document.getElementById('inputgender').value = "";
+            email = document.getElementById('inputemail').value = "";
+            password = document.getElementById('inputpassword').value = "";
+            address = document.getElementById('inputaddress').value = "";
+            city = document.getElementById('inputcity').value = "";
+            zip = document.getElementById('inputzip').value = "";
+
+            // window.location.href="/Login/login.html"
+
+
         }
+        //  ---------------End-------------------
+
+
+
     </script>
-
-    <!-- <div class="list-group">
-        <a href="#" class="list-group-item" onclick="makeActive(event)">Item 1</a>
-        <a href="#" class="list-group-item" onclick="makeActive(event)">Item 2</a>
-        <a href="#" class="list-group-item" onclick="makeActive(event)">Item 3</a>
-     </div>
-     <script>
-       function makeActive(event) {
-         
-            var previous = document.getElementsByClassName("active");
-            for (let i = 0; i < previous.length; i++) {
-                previous[i].className = previous[i].className.replace(" active", "");
-            }
-            event.target.className += " active";
-        }
-     </script> -->
-
-
-
-
-    <!-- <script>
-
-        function makeActive(event) {
-            var previous = document.getElementsByClassName("active");
-            for (let i = 0; i< previous.length; i++) {
-                previous[i].className = previous[i].className.replace("active", "");
-            }
-            event.target.className += "active";
-        }
-        const slidesContainer = document.getElementById("ul");
-        const slide = document.getElementById("li");
-        const prevButton = document.getElementById("button-prev");
-        const nextButton = document.getElementById("button-next");
-        
-        nextButton.addEventListener("click", function () {
-
-            const slideWidth = slide.clientWidth;
-            slidesContainer.scrollLeft += slideWidth;
-            makeActive(event)
-        });
-
-        prevButton.addEventListener("click", function () {
-            const slideWidth = slide.clientWidth;
-            slidesContainer.scrollLeft -= slideWidth;
-
-            makeActive(event)
-        });
-    </script> -->
-
-
-
-
 </body>
 
 </html>
