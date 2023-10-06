@@ -1,3 +1,20 @@
+// To redirect on the dashboard page in not logout the page
+function stopRedirectingOnDasboard() {
+    window.addEventListener("load", function () {
+        let loginLocalData = localStorage.getItem('loginData');
+        // console.log(regLocalData,"regLocalData");
+
+        // const userData = JSON.parse(loginLocalData);
+        // console.log(userData.isLogin, "userData");
+        if (loginLocalData) {
+            window.location.replace('/dashbord-home.html');
+        }
+    })
+}
+stopRedirectingOnDasboard();
+//----------------------End---------------------
+
+
 // To store data of registration form
 // id for the object
 let idOfObj = 1;
@@ -49,21 +66,26 @@ createRegData = () => {
 
     var email = document.getElementById('inputemail').value;
 
-    
-    // let regLocalData = localStorage.getItem("localData");
-    // for (let i = 0; i < regLocalData.length; i++) {
-    //     console.log(regLocalData[i],"regLocalData");
-        
-    // }
     var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
     if (!regexEmail.test(email) == true) {
         document.getElementById("email").innerHTML =
             `<p class="text-danger"> Please enter your email</p>`;
-        return false
+        return false;
     } else {
         document.getElementById("email").innerHTML = "";
 
     }
+
+    let regLocalData = JSON.parse(localStorage.getItem("localData"));
+    for (const res of regLocalData) {
+        console.log(res.email, "email");
+        if(email === res.email){
+            console.log(res.email)
+            alert("Email already exists!")
+            return false;
+        }
+    }
+    
 
 
     var password = document.getElementById('inputpassword').value;
