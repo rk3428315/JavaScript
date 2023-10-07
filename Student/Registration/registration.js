@@ -75,19 +75,17 @@ createRegData = () => {
         document.getElementById("email").innerHTML = "";
 
     }
-    
-    // To check email exits or not in localStorage
+
     let regLocalData = JSON.parse(localStorage.getItem("localData"));
-    if(regLocalData){
-        for (const res of regLocalData) {
-            console.log(res.email, "email");
-            if(email === res.email){
-                console.log(res.email)
-                alert("Email already exists!")
-                return false;
-            }
+    for (const res of regLocalData) {
+        console.log(res.email, "email");
+        if(email === res.email){
+            console.log(res.email)
+            alert("Email already exists!")
+            return false;
         }
-    }     
+    }
+    
 
 
     var password = document.getElementById('inputpassword').value;
