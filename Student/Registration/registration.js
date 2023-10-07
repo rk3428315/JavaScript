@@ -1,26 +1,8 @@
-// To redirect on the dashboard page in not logout the page
-function stopRedirectingOnDasboard() {
-    window.addEventListener("load", function () {
-        let loginLocalData = localStorage.getItem('loginData');
-        // console.log(regLocalData,"regLocalData");
-
-        // const userData = JSON.parse(loginLocalData);
-        // console.log(userData.isLogin, "userData");
-        if (loginLocalData) {
-            window.location.replace('/dashbord-home.html');
-        }
-    })
-}
-stopRedirectingOnDasboard();
-//----------------------End---------------------
-
-
 // To store data of registration form
 // id for the object
-let idOfObj = (Math.floor(Math.random() * 20000));;
+let idOfObj = 1;
 // Array to store the object data one by one 
-let storeRegData = {};
-let regPreviousData = []
+let storeRegData = [];
 
 // created a object for registration form data
 function regData(name, age, gender, email, password, address, city, zip) {
@@ -65,30 +47,15 @@ createRegData = () => {
     }
 
     var email = document.getElementById('inputemail').value;
-
     var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
     if (!regexEmail.test(email) == true) {
         document.getElementById("email").innerHTML =
-            `<p class="text-danger"> Please enter your email</p>`;
-        return false;
+        `<p class="text-danger"> Please enter your email</p>`;
+        return false
     } else {
         document.getElementById("email").innerHTML = "";
-
+        // return true;
     }
-    
-    // To check email exits or not in localStorage
-    let regLocalData = JSON.parse(localStorage.getItem("localData"));
-    if(regLocalData){
-        for (const res of regLocalData) {
-            console.log(res.email, "email");
-            if(email === res.email){
-                console.log(res.email)
-                alert("Email already exists!")
-                return false;
-            }
-        }
-    }     
-
 
     var password = document.getElementById('inputpassword').value;
     if (password.length < 1) {
@@ -97,7 +64,7 @@ createRegData = () => {
     } else {
         document.getElementById("password").innerHTML = "";
     }
-
+    
     var address = document.getElementById('inputaddress').value;
     if (address.length < 1) {
         document.getElementById("address").innerHTML =
@@ -125,45 +92,28 @@ createRegData = () => {
     if (name != "" && age != "" && gender != "" && email != "" && password != "" && address != "" && city != "" && zip != "") {
         // To create new object
         newRegData = new regData(name, age, gender, email, password, address, city, zip);
+        storeRegData.push(newRegData);
 
-        // To push object data again and again in storeRegData array        
-        // storeRegData.push(newRegData);
-        // console.log(typeof storeRegData, "storeRegData");
-        if (localStorage.getItem("localData") != null) {
+        // To push object data again and again in storeRegData array
+        localStorage.setItem("localData", JSON.stringify(storeRegData));
 
-            const getCurrentCart = window.localStorage.getItem('localData');
-            const currentCart = JSON.parse(getCurrentCart);
+        var regStoreData = JSON.parse(localStorage.getItem("localData"));
 
-            currentCart.push(newRegData);
+        // To set data in local Storage
+        console.log(regStoreData, "Array Data");
 
-            window.localStorage.setItem('localData', JSON.stringify(currentCart));
+        // To get local Storage Data
+        // const getLocalData = localStorage.getItem("local Data");
+        // console.log(getLocalData);
 
-
-
-        } else {
-            let currentCart = [];
-            currentCart.push(newRegData);
-            window.localStorage.setItem('localData', JSON.stringify(currentCart));
-
-        }
         alert("Registration Successfully!");
-        // idOfObj++;
-        window.location.href = "/Login/login.html";
-
+        idOfObj++;
+        // window.location.href = "/Login/login.html";
     }
 
-    // To clear the all input fields data after registration
-    name = document.getElementById('inputname').value = "";
-    age = document.getElementById('inputage').value = "";
-    gender = document.getElementById('inputgender').value = "";
-    email = document.getElementById('inputemail').value = "";
-    password = document.getElementById('inputpassword').value = "";
-    address = document.getElementById('inputaddress').value = "";
-    city = document.getElementById('inputcity').value = "";
-    zip = document.getElementById('inputzip').value = "";
-
-    // window.location.href="/Login/login.html"
 
 
 }
 //  ---------------End-------------------
+
+

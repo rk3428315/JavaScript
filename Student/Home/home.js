@@ -10,9 +10,9 @@ function stopRedirectingOnDasboard() {
         let loginLocalData = localStorage.getItem('loginData');
         // console.log(regLocalData,"regLocalData");
     
-        // const userData = JSON.parse(loginLocalData);
+        const userData = JSON.parse(loginLocalData);
         // console.log(userData.isLogin, "userData");
-        if (loginLocalData) {    
+        if (userData.isLogin === true) {    
             window.location.replace('/dashbord-home.html');
         }
     })
